@@ -1,0 +1,238 @@
+/* ───────────────────────────────────────────────
+   LV Beach Camp — Style Sheet
+   Fonts: Marcellus (headings) + Quicksand (body)
+   Theme: Native + Freshly Served
+──────────────────────────────────────────────── */
+
+:root {
+  --brown: #b5651d;
+  --teal: #2aa198;
+  --cream: #fff8ee;
+  --text: #3a2e1f;
+  --muted: #7d7468;
+  --card: #ffffff;
+}
+
+/* ─────── Base Styles ─────── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: 'Quicksand', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ─────── Navigation Bar ─────── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  background: rgba(255, 248, 238, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(6px);
+}
+
+.logo { height: 54px; border-radius: 8px; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover { color: var(--brown); }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: var(--brown);
+}
+
+/* ─────── Buttons ─────── */
+.btn {
+  background: var(--brown);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.btn:hover { background: var(--teal); }
+
+/* ─────── Hero Section ─────── */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0,0,0,0.2)),
+              url('../images/hero-placeholder.jpg') center/cover no-repeat;
+  color: #fff;
+  padding: 100px 0 120px;
+  text-align: center;
+}
+
+.hero-inner h1 {
+  font-family: 'Marcellus', serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.hero .tagline {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  font-size: 1rem;
+  border-radius: 12px;
+}
+
+/* ─────── Sections ─────── */
+section {
+  padding: 60px 0;
+}
+
+h2 {
+  font-family: 'Marcellus', serif;
+  color: var(--brown);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.center { text-align: center; margin-top: 20px; }
+
+/* ─────── Featured Stays Grid ─────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.listing-card, .card {
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listing-card:hover, .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.listing-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.listing-card h3 {
+  font-family: 'Marcellus', serif;
+  margin-top: 8px;
+}
+
+.listing-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ─────── Two-Column Layout (Twin Island) ─────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.responsive-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* ─────── Food & Packages Cards ─────── */
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+.card h3 {
+  font-family: 'Marcellus', serif;
+  color: var(--brown);
+  margin-bottom: 8px;
+}
+
+/* ─────── Footer ─────── */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding: 40px 0 20px;
+  color: var(--muted);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.footer-grid h4 {
+  font-family: 'Marcellus', serif;
+  color: var(--brown);
+  margin-bottom: 10px;
+}
+
+.logo-small { height: 40px; border-radius: 8px; }
+
+.copyright {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 30px;
+}
+
+/* ─────── Responsive ─────── */
+@media (max-width: 900px) {
+  .two-col { grid-template-columns: 1fr; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    background: var(--cream);
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-toggle { display: block; }
+}
