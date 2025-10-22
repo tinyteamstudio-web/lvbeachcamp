@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LV Beach Camp</title>
+  <meta name="description" content="Beachfront accommodations and tours by LV Beach Camp. Stay, unwind, and enjoy island life.">
+  <link rel="icon" href="assets/images/Logo.jpg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- 🌴 Navigation -->
+  <nav class="navbar container">
+    <a href="index.html" class="brand">
+      <img src="assets/images/Logo.jpg" alt="LV Beach Camp logo" class="logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="listings.html">Stay</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a class="btn" href="booking.html">Book Now</a></li>
+    </ul>
+    <button id="navToggle" class="nav-toggle">☰</button>
+  </nav>
+
+  <!-- 📸 Gallery Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Gallery</h1>
+      <p>Explore the beauty of LV Beach Camp — from cozy beachfront kubos to breathtaking island views and delicious local food.</p>
+    </div>
+  </header>
+
+  <!-- 🖼️ Gallery Grid -->
+  <main class="container">
+    <div class="grid gallery-grid" id="galleryGrid">
+      <!-- Images will appear here -->
+    </div>
+  </main>
+
+  <!-- 📍 Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/images/Logo.jpg" alt="LV Beach Camp logo" class="logo-small" />
+        <p>LV Beach Camp — native comfort by the sea.</p>
+      </div>
+      <div>
+        <h4>Find Us</h4>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d391.972... (paste your full embed code here)"
+          width="280" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Phone: +63-XXXXXXXXXX</p>
+        <p>Email: hello@lvbeachcamp.online</p>
+        <a href="contact.html">Message Us</a>
+      </div>
+    </div>
+    <div class="container copyright">
+      <p>© <span id="year"></span> LV Beach Camp. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- 🪄 Lightbox Script -->
+  <script>
+    const galleryImages = [
+      "assets/images/gallery-beach.jpg",
+      "assets/images/gallery-kubo.jpg",
+      "assets/images/gallery-food.jpg",
+      "assets/images/gallery-twinisland.jpg",
+      "assets/images/gallery-sunset.jpg",
+      "assets/images/gallery-fun.jpg"
+    ];
+
+    const galleryGrid = document.getElementById("galleryGrid");
+
+    // Generate image cards
+    galleryImages.forEach((img) => {
+      const div = document.createElement("div");
+      div.classList.add("gallery-card");
+      div.innerHTML = `<img src="${img}" alt="LV Beach Camp">`;
+      galleryGrid.appendChild(div);
+    });
+
+    // Lightbox
+    const lightbox = document.createElement("div");
+    lightbox.id = "lightbox";
+    document.body.appendChild(lightbox);
+
+    const imgs = document.querySelectorAll(".gallery-grid img");
+    imgs.forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.classList.add("active");
+        const newImg = document.createElement("img");
+        newImg.src = img.src;
+        while (lightbox.firstChild) lightbox.removeChild(lightbox.firstChild);
+        lightbox.appendChild(newImg);
+      });
+    });
+
+    lightbox.addEventListener("click", e => {
+      if (e.target !== e.currentTarget) return;
+      lightbox.classList.remove("active");
+    });
+  </script>
+</body>
+</html>
 
