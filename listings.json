@@ -1,1 +1,33 @@
+[
+  {
+    "id": "tent-a",
+    "name": "Tent A — Beachfront View",
+    "price": 1200,
+    "capacity": 2,
+    "short": "A cozy beachfront tent perfect for couples or solo travelers. Enjoy the sea breeze and sunrise views right from your tent door.",
+    "images": [
+      "assets/images/tent-a.jpg"
+    ]
+  },
+  {
+    "id": "kubo-b",
+    "name": "Native Kubo — Family Space",
+    "price": 2500,
+    "capacity": 4,
+    "short": "A native-style bamboo kubo ideal for small families or groups. Comfortably furnished with local charm and sea views.",
+    "images": [
+      "assets/images/kubo-b.jpg"
+    ]
+  },
+  {
+    "id": "cottage-c",
+    "name": "Beach Cottage — Oceanfront Stay",
+    "price": 3200,
+    "capacity": 5,
+    "short": "A spacious cottage by the shore with private seating area and easy access to the beach. Perfect for a relaxing weekend.",
+    "images": [
+      "assets/images/cottage-c.jpg"
+    ]
+  }
+]
 
