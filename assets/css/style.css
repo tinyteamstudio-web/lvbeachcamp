@@ -281,3 +281,59 @@ h2 {
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(255,255,255,0.3);
 }
+/* ─────── Contact Page Styles ─────── */
+.contact-section {
+  margin-top: 40px;
+}
+
+.contact-section h2 {
+  font-family: 'Marcellus', serif;
+  color: var(--brown);
+  margin-bottom: 10px;
+}
+
+.contact-section a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+/* Inquiry Form */
+.inquiry-form {
+  margin-top: 60px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.inquiry-form label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: 600;
+}
+
+.inquiry-form input,
+.inquiry-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Quicksand', sans-serif;
+  resize: none;
+}
+
+.form-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .inquiry-form {
+    padding: 20px;
+  }
+}
