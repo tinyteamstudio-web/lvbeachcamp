@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LV Beach Camp</title>
+  <meta name="description" content="Beachfront accommodations and tours by LV Beach Camp. Stay, unwind, and enjoy island life.">
+  <link rel="icon" href="assets/images/Logo.jpg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- 🌴 Navigation -->
+  <nav class="navbar container">
+    <a href="index.html" class="brand">
+      <img src="assets/images/Logo.jpg" alt="LV Beach Camp logo" class="logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="listings.html" class="active">Stay</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a class="btn" href="booking.html">Book Now</a></li>
+    </ul>
+    <button id="navToggle" class="nav-toggle">☰</button>
+  </nav>
+
+  <!-- 🏕️ Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Our Accommodations</h1>
+      <p>Find the perfect stay that fits your island adventure — from cozy tents to spacious native cottages.</p>
+    </div>
+  </header>
+
+  <!-- 🏡 Listings Grid -->
+  <main class="container">
+    <div id="listingsGrid" class="grid"></div>
+  </main>
+
+  <!-- 📍 Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/images/Logo.jpg" alt="LV Beach Camp logo" class="logo-small" />
+        <p>LV Beach Camp — native comfort by the sea.</p>
+      </div>
+      <div>
+        <h4>Find Us</h4>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d391.972... (paste your full embed code here)"
+          width="280" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Phone: +63-XXXXXXXXXX</p>
+        <p>Email: hello@lvbeachcamp.online</p>
+        <a href="contact.html">Message Us</a>
+      </div>
+    </div>
+    <div class="container copyright">
+      <p>© <span id="year"></span> LV Beach Camp. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Load All Listings Dynamically
+    async function populateAllListings() {
+      const grid = document.getElementById("listingsGrid");
+      try {
+        const res = await fetch("data/listings.json");
+        const listings = await res.json();
+        grid.innerHTML = "";
+
+        listings.forEach((listing) => {
+          const card = document.createElement("div");
+          card.classList.add("listing-card");
+          card.innerHTML = `
+            <img src="${listing.images[0] || 'assets/images/room-placeholder.jpg'}" alt="${listing.name}">
+            <h3>${listing.name}</h3>
+            <p>${listing.short}</p>
+            <div class="listing-meta">
+              <span>${listing.capacity} pax</span>
+              <span>₱${listing.price.toLocaleString()}</span>
+            </div>
+            <div class="center" style="margin-top:10px;">
+              <a href="booking.html" class="btn">Book Now</a>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      } catch (err) {
+        console.error("Error loading listings:", err);
+        grid.innerHTML = "<p>Unable to load listings at this time.</p>";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      populateAllListings();
+      updateYear();
+      setupMobileNav();
+    });
+  </script>
+</body>
+</html>
 
