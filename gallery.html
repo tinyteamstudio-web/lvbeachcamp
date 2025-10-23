@@ -1,100 +1,195 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery | LV Beach Camp</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery — LV Beach Camp</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+
+  <style>
+    :root {
+      --gold: #F6B65B;
+      --bamboo: #8A5A2B;
+      --ocean: #2F4930;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #fffaf5;
+      color: #4b2e05;
+    }
+
+    /* HEADER */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 22px;
+      background: rgba(255,255,255,0.95);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .brand img {
+      height: 42px;
+      border-radius: 6px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      font-weight: 600;
+      color: var(--bamboo);
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--bamboo);
+      transition: color 0.3s;
+    }
+
+    .nav a:hover {
+      color: var(--gold);
+    }
+
+    /* HERO */
+    .hero {
+      height: 60vh;
+      background-image: url('assets/sunrise.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 1;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 1s ease forwards;
+      padding: 0 20px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 40px;
+      margin-bottom: 8px;
+    }
+
+    .hero-text p {
+      color: #f8f8f8;
+      font-size: 16px;
+    }
+
+    /* GALLERY SECTION */
+    .gallery-section {
+      max-width: 1100px;
+      margin: -40px auto 60px;
+      padding: 20px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      box-shadow: 0 8px 26px rgba(0,0,0,0.06);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      background: linear-gradient(180deg, #8A5A2B, #c66f2b);
+      color: #fff;
+      padding: 36px 16px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media(max-width:640px){
+      .hero-text h1{font-size:30px;}
+    }
+  </style>
 </head>
+
 <body>
-
-<header class="site-header">
-  <div class="header-left">
-    <a href="index.html"><img src="assets/logo.png" alt="LV Beach Camp Logo" class="logo"></a>
-    <div class="header-text">
-      <h1>LV Beach Camp</h1>
-      <p>native comfort by the sea</p>
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html"><img src="assets/logo.jpg" alt="LV Beach Camp logo"></a>
     </div>
-  </div>
-  <div class="header-right">
-    <p>📞 +63 946 291 1866</p>
-    <p>✉️ <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a></p>
-    <p>💬 <a href="https://m.me/LVBeachCamp" target="_blank">Message us on Facebook</a></p>
-  </div>
-</header>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Booking</a>
+      <a href="gcash.html">Payments</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<section class="gallery">
-  <h2>Accommodations & Rates</h2>
-  <div class="gallery-grid">
-
-    <div class="room-card">
-      <img src="assets/bahaykubo.jpg" alt="Bahay Kubo Beach Front">
-      <h3>Bahay Kubo (Beach Front)</h3>
-      <p>₱1,200 – ₱1,450 per night for 2 pax</p>
-      <a href="booking.html" class="btn-primary">Book Now</a>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Our Gallery</h1>
+      <p>See the beauty of LV Beach Camp — sunrise views, beachfront kubos, and unforgettable memories.</p>
     </div>
+  </section>
 
-    <div class="room-card">
-      <img src="assets/rooma.jpg" alt="Native House A & B">
-      <h3>Native House A & B</h3>
-      <p>₱850 – ₱950 per night for 2 pax<br>+ ₱200 per extra head</p>
-      <a href="booking.html" class="btn-primary">Book Now</a>
-    </div>
-
-    <div class="room-card">
-      <img src="assets/teepee new.jpg" alt="Teepee House Beachfront">
-      <h3>Teepee House (Beachfront)</h3>
-      <p>₱1,000 – ₱1,200 per night<br>+ ₱350 with aircon</p>
-      <a href="booking.html" class="btn-primary">Book Now</a>
-    </div>
-
-    <div class="room-card">
-      <img src="assets/smallcampingtent.jpg" alt="Small Camping Tent">
-      <h3>Small Camping Tent</h3>
-      <p>₱400 per tent (2–3 pax)</p>
-      <a href="booking.html" class="btn-primary">Book Now</a>
-    </div>
-
-    <div class="room-card">
+  <section class="gallery-section">
+    <div class="gallery-grid">
+      <img src="assets/bahaykubo.jpg" alt="Bahay Kubo">
+      <img src="assets/teepee new.jpg" alt="Teepee Glamping Tent">
+      <img src="assets/gazebotents.jpg" alt="Gazebo Tents">
+      <img src="assets/rooma.jpg" alt="Room A Interior">
       <img src="assets/mediumcampingtent.jpg" alt="Medium Camping Tent">
-      <h3>Medium Camping Tent</h3>
-      <p>₱500 per tent (3–4 pax)</p>
-      <a href="booking.html" class="btn-primary">Book Now</a>
+      <img src="assets/smallcampingtent.jpg" alt="Small Camping Tent">
+      <img src="assets/umbrella.jpg" alt="Beach Umbrella Lounge">
+      <img src="assets/new room rates.jpg" alt="Updated Rates Board">
     </div>
+  </section>
 
-    <div class="room-card">
-      <img src="assets/gazebotents.jpg" alt="Gazebo Tent">
-      <h3>Gazebo Tent (Group)</h3>
-      <p>₱600 – ₱700 (6-hour use)</p>
-      <a href="booking.html" class="btn-primary">Book Now</a>
-    </div>
-
-    <div class="room-card">
-      <img src="assets/umbrella.jpg" alt="Beach Umbrella">
-      <h3>Beach Umbrella</h3>
-      <p>₱200 – ₱300 (6-hour use)</p>
-      <a href="booking.html" class="btn-primary">Book Now</a>
-    </div>
-
-  </div>
-</section>
-
-<section class="rates">
-  <h2>Complete Room Rates</h2>
-  <img src="assets/new room rates.jpg" alt="LV Beach Camp Full Rate List" class="rate-image">
-</section>
-
-<footer>
-  <img src="assets/logo.png" alt="LV Beach Camp logo" class="footer-logo">
-  <p><strong>LV Beach Camp</strong> — native comfort by the sea.</p>
-  <p>© <span id="year"></span> LV Beach Camp | All Rights Reserved</p>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
+  <footer>
+    <p>© 2025 LV Beach Camp | Native Comfort by the Sea</p>
+    <p>📞 +63 946 291 1866 | ✉️ lvbeachcamp@gmail.com</p>
+  </footer>
 </body>
 </html>
