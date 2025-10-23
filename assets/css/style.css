@@ -1,339 +1,281 @@
-/* ───────────────────────────────────────────────
-   LV Beach Camp — Style Sheet
-   Fonts: Marcellus (headings) + Quicksand (body)
-   Theme: Native + Freshly Served
-──────────────────────────────────────────────── */
+/* ---------------------------
+   LV Beach Camp — style.css
+   Clean Tropical Theme 🌴
+---------------------------- */
 
 :root {
-  --brown: #b5651d;
-  --teal: #2aa198;
-  --cream: #fff8ee;
-  --text: #3a2e1f;
-  --muted: #7d7468;
-  --card: #ffffff;
+  --accent: #c9742a;       /* warm sand / bamboo tone */
+  --accent-dark: #a6571d;
+  --bg-light: #fff8ef;     /* light cream background */
+  --text-dark: #3b2b18;
+  --text-light: #666;
+  --radius: 14px;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+  --transition: all 0.3s ease;
 }
 
-/* ─────── Base Styles ─────── */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html, body {
-  height: 100%;
-  font-family: 'Quicksand', sans-serif;
-  background: var(--cream);
-  color: var(--text);
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  margin: 0;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
 }
 
-.container {
-  width: 90%;
-  max-width: 1100px;
+/* ---------- HEADER ---------- */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px 40px;
+  box-shadow: var(--shadow);
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 70px;
+  height: auto;
+  margin-right: 12px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--accent-dark);
+}
+
+.header-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.header-right {
+  text-align: right;
+}
+
+.header-right p, .header-right a {
+  font-size: 0.9rem;
+  margin: 2px 0;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.header-right a:hover {
+  color: var(--accent);
+}
+
+/* ---------- GALLERY ---------- */
+
+.gallery {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  color: var(--accent-dark);
+  margin-bottom: 40px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ─────── Navigation Bar ─────── */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 0;
-  background: rgba(255, 248, 238, 0.9);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(6px);
+.room-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition);
 }
 
-.logo { height: 54px; border-radius: 8px; }
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 18px;
+.room-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 500;
-  transition: color 0.3s ease;
+.room-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-.nav-links a.active,
-.nav-links a:hover { color: var(--brown); }
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 22px;
-  color: var(--brown);
+.room-card h3 {
+  color: var(--accent-dark);
+  font-size: 1.1rem;
+  margin: 15px 0 5px;
 }
 
-/* ─────── Buttons ─────── */
-.btn {
-  background: var(--brown);
+.room-card p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin: 0 0 15px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent);
   color: #fff;
-  padding: 10px 18px;
-  border-radius: 10px;
+  padding: 10px 20px;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-block;
+  margin-bottom: 15px;
+  transition: var(--transition);
 }
-.btn:hover { background: var(--teal); }
 
-/* ─────── Hero Section ─────── */
-.hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0,0,0,0.2)),
-              url('../images/hero-placeholder.jpg') center/cover no-repeat;
-  color: #fff;
-  padding: 100px 0 120px;
+.btn-primary:hover {
+  background-color: var(--accent-dark);
+}
+
+/* ---------- RATES ---------- */
+
+.rates {
   text-align: center;
+  margin: 60px auto;
+  padding: 20px;
 }
 
-.hero-inner h1 {
-  font-family: 'Marcellus', serif;
-  font-size: 3rem;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.hero .tagline {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 20px;
-}
-
-.hero-btn {
-  font-size: 1rem;
-  border-radius: 12px;
-}
-
-/* ─────── Sections ─────── */
-section {
-  padding: 60px 0;
-}
-
-h2 {
-  font-family: 'Marcellus', serif;
-  color: var(--brown);
+.rates h2 {
+  color: var(--accent-dark);
   font-size: 1.8rem;
   margin-bottom: 20px;
-  text-align: center;
 }
 
-.center { text-align: center; margin-top: 20px; }
+.rate-image {
+  width: 90%;
+  max-width: 900px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: block;
+  margin: 0 auto;
+}
 
-/* ─────── Featured Stays Grid ─────── */
-.grid {
+/* ---------- BOOKING FORM ---------- */
+
+form {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+form h2 {
+  text-align: center;
+  color: var(--accent-dark);
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+button, input[type="submit"] {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: var(--accent-dark);
+}
+
+/* ---------- PAYMENT PAGE ---------- */
+
+.payment-options {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.listing-card, .card {
-  background: var(--card);
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  padding: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.listing-card:hover, .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
-}
-
-.listing-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.listing-card h3 {
-  font-family: 'Marcellus', serif;
-  margin-top: 8px;
-}
-
-.listing-meta {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 6px;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-/* ─────── Two-Column Layout (Twin Island) ─────── */
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  align-items: center;
-}
-.responsive-img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* ─────── Food & Packages Cards ─────── */
-.card-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-}
-.card h3 {
-  font-family: 'Marcellus', serif;
-  color: var(--brown);
-  margin-bottom: 8px;
-}
-
-/* ─────── Footer ─────── */
-.site-footer {
-  background: #fff;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  padding: 40px 0 20px;
-  color: var(--muted);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-
-.footer-grid h4 {
-  font-family: 'Marcellus', serif;
-  color: var(--brown);
-  margin-bottom: 10px;
-}
-
-.logo-small { height: 40px; border-radius: 8px; }
-
-.copyright {
+  gap: 25px;
+  padding: 40px;
   text-align: center;
-  font-size: 0.9rem;
-  margin-top: 30px;
 }
 
-/* ─────── Responsive ─────── */
-@media (max-width: 900px) {
-  .two-col { grid-template-columns: 1fr; }
-  .nav-links {
-    display: none;
-    position: absolute;
-    right: 20px;
-    top: 70px;
-    background: var(--cream);
-    padding: 16px;
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    flex-direction: column;
-    gap: 10px;
-  }
-  .nav-toggle { display: block; }
-}
-/* ─────── Gallery Page Styles ─────── */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
+.payment-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
-.gallery-card img {
+.payment-card img {
   width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 250px;
+  border-radius: var(--radius);
 }
 
-.gallery-card img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+.payment-card h3 {
+  color: var(--accent-dark);
 }
 
-/* ─────── Lightbox ─────── */
-#lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+/* ---------- FOOTER ---------- */
+
+footer {
+  background: var(--accent-dark);
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
 }
 
-#lightbox.active {
-  display: flex;
-}
-
-#lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.3);
-}
-/* ─────── Contact Page Styles ─────── */
-.contact-section {
-  margin-top: 40px;
-}
-
-.contact-section h2 {
-  font-family: 'Marcellus', serif;
-  color: var(--brown);
+.footer-logo {
+  width: 60px;
   margin-bottom: 10px;
 }
 
-.contact-section a {
-  color: var(--teal);
-  text-decoration: none;
-}
-
-.contact-section a:hover {
+footer a {
+  color: #fff;
   text-decoration: underline;
 }
 
-/* Inquiry Form */
-.inquiry-form {
-  margin-top: 60px;
-  background: #fff;
-  padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+footer a:hover {
+  color: #f5c07c;
 }
 
-.inquiry-form label {
-  display: block;
-  margin: 12px 0 6px;
-  font-weight: 600;
-}
+/* ---------- RESPONSIVE ---------- */
 
-.inquiry-form input,
-.inquiry-form textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: 'Quicksand', sans-serif;
-  resize: none;
-}
+@media (max-width: 768px) {
+  .site-header {
+    text-align: center;
+    flex-direction: column;
+  }
 
-.form-note {
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-top: 10px;
-}
+  .header-right {
+    text-align: center;
+    margin-top: 10px;
+  }
 
-@media (max-width: 900px) {
-  .inquiry-form {
-    padding: 20px;
+  .room-card img {
+    height: 180px;
   }
 }
