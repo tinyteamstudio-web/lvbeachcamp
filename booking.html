@@ -1,1 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Stay | LV Beach Camp</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom right, #ccefff, #fff8f0);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .booking-container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: #ffffffd9;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #007b83;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 5px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      background: #007b83;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #005f63;
+    }
+
+    .message {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 15px;
+      color: #007b83;
+      font-weight: 600;
+      display: none;
+    }
+
+    .error {
+      color: #d9534f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="booking-container">
+    <h1>🌴 Book Your Stay</h1>
+
+    <form id="bookingForm">
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="contact">Contact Number *</label>
+      <input type="text" id="contact" name="contact" required />
+
+      <label for="room">Select Tent/Room *</label>
+      <select id="room" name="room" required>
+        <option value="">-- Select --</option>
+        <option value="Beachfront Tent">Beachfront Tent</option>
+        <option value="Garden Tent">Garden Tent</option>
+        <option value="Family Kubo">Family Kubo</option>
+        <option value="Couple Kubo">Couple Kubo</option>
+      </select>
+
+      <label for="checkin">Check-in Date *</label>
+      <input type="date" id="checkin" name="checkin" required />
+
+      <label for="checkout">Check-out Date *</label>
+      <input type="date" id="checkout" name="checkout" required />
+
+      <label for="pax">Number of Guests *</label>
+      <input type="number" id="pax" name="pax" min="1" required />
+
+      <label for="notes">Special Requests</label>
+      <textarea id="notes" name="notes" placeholder="Any special requests?"></textarea>
+
+      <button type="submit">Submit Booking</button>
+    </form>
+
+    <div class="message" id="successMessage">Thank you! Your booking has been submitted successfully. 🌊</div>
+    <div class="message error" id="errorMessage">Oops! Something went wrong. Please try again later.</div>
+  </div>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxM1x34ZSAfpBYe5tPrl3pJVvZ45Ed8TLd3fbJVPYF-qvEcv0nnOl9gNcVPUHd8xVhV/exec";
+    const form = document.getElementById("bookingForm");
+    const successMsg = document.getElementById("successMessage");
+    const errorMsg = document.getElementById("errorMessage");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const formData = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        contact: form.contact.value.trim(),
+        room: form.room.value,
+        checkin: form.checkin.value,
+        checkout: form.checkout.value,
+        pax: form.pax.value,
+        notes: form.notes.value.trim(),
+      };
+
+      // Send data to Google Apps Script
+      fetch(scriptURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+        .then(() => {
+          form.reset();
+          successMsg.style.display = "block";
+          errorMsg.style.display = "none";
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        })
+        .catch(() => {
+          successMsg.style.display = "none";
+          errorMsg.style.display = "block";
+        });
+    });
+  </script>
+</body>
+</html>
 
