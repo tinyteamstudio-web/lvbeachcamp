@@ -3,110 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LV Beach Camp</title>
-  <meta name="description" content="Beachfront accommodations and tours by LV Beach Camp. Stay, unwind, and enjoy island life.">
-  <link rel="icon" href="assets/images/Logo.jpg" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>LV Beach Camp | Native Comfort by the Sea</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <!-- 🌴 Navigation -->
-  <nav class="navbar container">
-    <a href="index.html" class="brand">
-      <img src="assets/images/Logo.jpg" alt="LV Beach Camp logo" class="logo">
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="listings.html">Stay</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a class="btn" href="booking.html">Book Now</a></li>
-    </ul>
-    <button id="navToggle" class="nav-toggle">☰</button>
-  </nav>
 
-  <!-- 🏖️ Hero Section -->
-  <header class="hero">
-    <div class="hero-inner container">
-      <h1>Welcome to LV Beach Camp</h1>
-      <p class="tagline">Beachfront accommodations, native cottages, and island adventures — freshly served by the sea.</p>
-      <a href="listings.html" class="btn hero-btn">Explore Stays</a>
+  <!-- 🌴 HEADER -->
+  <header class="site-header">
+    <div class="header-left">
+      <a href="index.html"><img src="assets/logo.png" alt="LV Beach Camp Logo" class="logo"></a>
+      <div class="header-text">
+        <h1>LV Beach Camp</h1>
+        <p>native comfort by the sea</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <p>📞 +63 946 291 1866</p>
+      <p>✉️ <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a></p>
+      <p>💬 <a href="https://m.me/lvbeachcamp" target="_blank">Message us on Facebook</a></p>
     </div>
   </header>
 
-  <!-- 🏕️ Featured Stays -->
-  <section class="featured container">
-    <h2>Featured Stays</h2>
-    <div id="featuredGrid" class="grid"></div>
-    <div class="center">
-      <a href="listings.html" class="btn">View All Accommodations</a>
+  <!-- 🌅 HERO SECTION -->
+  <section class="hero" style="background:url('assets/bahaykubo.jpg') center/cover no-repeat; position:relative; height:80vh; display:flex; align-items:center; justify-content:center; text-align:center;">
+    <div style="background:rgba(0,0,0,0.4); padding:40px; border-radius:20px; color:#fff;">
+      <h2 style="font-family:'Pacifico',cursive; font-size:2.5rem; margin-bottom:15px;">Welcome to LV Beach Camp</h2>
+      <p style="max-width:600px; margin:auto; font-size:1.1rem;">Experience native-style comfort along the shore. Enjoy our kubos, tents, and cozy seaside breeze — all set in a tropical paradise.</p>
+      <br>
+      <a href="booking.html" class="btn-primary">Book Your Stay</a>
+      <a href="gallery.html" class="btn-secondary" style="margin-left:10px;">View Our Rooms</a>
     </div>
   </section>
 
-  <!-- 🌴 Twin Island Tour -->
-  <section class="twin-island container">
-    <h2>Twin Island Tour</h2>
-    <div class="two-col">
-      <div>
-        <img src="assets/images/twin-island-placeholder.jpg" alt="Twin Island Tour" class="responsive-img" />
-      </div>
-      <div>
-        <p><strong>Experience Twin Island</strong> — an exclusive island-hopping adventure only minutes from LV Beach Camp. Perfect for guests seeking a day of snorkeling, boat rides, and crystal waters.</p>
-        <ul>
-          <li>Duration: 4–5 hours</li>
-          <li>Includes: boat transfer, life jackets, and picnic setup</li>
-        </ul>
-        <a href="contact.html" class="btn">Inquire About the Tour</a>
-      </div>
-    </div>
+  <!-- 🏕️ ABOUT -->
+  <section class="about" style="text-align:center; padding:60px 20px; max-width:900px; margin:auto;">
+    <h2 style="color:#a6571d;">About LV Beach Camp</h2>
+    <p>LV Beach Camp offers a perfect mix of native cottages, beachfront kubos, and glamping tents — all built for guests who want to unwind close to nature. Whether you’re traveling solo, with friends, or family, our beach camp welcomes you to relax, recharge, and reconnect with the sea.</p>
   </section>
 
-  <!-- 🍽️ Food & Packages -->
-  <section class="preview container">
-    <h2>Food & Packages</h2>
-    <div class="card-row">
-      <div class="card">
-        <h3>Freshly Served</h3>
-        <p>Delicious seafood platters, grilled specialties, and native favorites served daily at our in-house kitchen.</p>
+  <!-- 📸 ROOMS PREVIEW -->
+  <section class="rooms-preview" style="text-align:center; padding:40px 20px; background:#fff;">
+    <h2 style="color:#a6571d;">Our Accommodations</h2>
+    <div class="gallery-grid">
+
+      <div class="room-card">
+        <img src="assets/bahaykubo.jpg" alt="Bahay Kubo Beach Front">
+        <h3>Bahay Kubo (Beach Front)</h3>
+        <p>₱1,200 – ₱1,450 / night</p>
       </div>
-      <div class="card">
-        <h3>Event Packages</h3>
-        <p>Beach weddings, team gatherings, and celebrations — all setup in our native beachfront style.</p>
+
+      <div class="room-card">
+        <img src="assets/rooma.jpg" alt="Native House A & B">
+        <h3>Native House A & B</h3>
+        <p>₱850 – ₱950 / night</p>
       </div>
-      <div class="card">
-        <h3>Convenience Store</h3>
-        <p>Essentials and refreshments available on-site for your comfort and adventure.</p>
+
+      <div class="room-card">
+        <img src="assets/teepee new.jpg" alt="Teepee House Beachfront">
+        <h3>Teepee House (Beachfront)</h3>
+        <p>₱1,000 – ₱1,200 / night</p>
       </div>
+
+      <div class="room-card">
+        <img src="assets/mediumcampingtent.jpg" alt="Medium Tent">
+        <h3>Medium Camping Tent</h3>
+        <p>₱500 / tent (3–4 pax)</p>
+      </div>
+
     </div>
+    <a href="gallery.html" class="btn-primary" style="margin-top:20px;">View All Rooms</a>
   </section>
 
-  <!-- 📍 Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <img src="assets/images/Logo.jpg" alt="LV Beach Camp logo" class="logo-small" />
-        <p>LV Beach Camp — native comfort by the sea.</p>
-      </div>
-      <div>
-        <h4>Find Us</h4>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d391.972... (paste your full embed code here)"
-          width="280" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p>Phone: +63-XXXXXXXXXX</p>
-        <p>Email: hello@lvbeachcamp.online</p>
-        <a href="contact.html">Message Us</a>
-      </div>
-    </div>
-    <div class="container copyright">
-      <p>© <span id="year"></span> LV Beach Camp. All rights reserved.</p>
-    </div>
+  <!-- 📞 CONTACT -->
+  <section class="contact" style="text-align:center; padding:60px 20px;">
+    <h2 style="color:#a6571d;">Contact Us</h2>
+    <p>📍 LV Beach Camp, Coastal Road, Philippines</p>
+    <p>📞 <a href="tel:+639462911866">+63 946 291 1866</a></p>
+    <p>✉️ <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a></p>
+    <p>💬 <a href="https://facebook.com/lvbeachcamp" target="_blank">facebook.com/lvbeachcamp</a></p>
+  </section>
+
+  <!-- 🌴 FOOTER -->
+  <footer>
+    <img src="assets/logo.png" alt="LV Beach Camp logo" class="footer-logo">
+    <p><strong>LV Beach Camp</strong> — native comfort by the sea.</p>
+    <p>© <span id="year"></span> LV Beach Camp | All Rights Reserved</p>
+    <p>
+      <a href="booking.html">Book Now</a> |
+      <a href="gallery.html">Our Rooms</a> |
+      <a href="gcash.html">Payments</a>
+    </p>
+    <p>💬 <a href="https://facebook.com/lvbeachcamp" target="_blank">Visit our Facebook Page</a></p>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <!-- 💬 MESSENGER FLOAT -->
+  <a href="https://m.me/lvbeachcamp" class="messenger-float" target="_blank" title="Message us on Facebook">
+    💬
+  </a>
+
+  <style>
+    .messenger-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #0084ff;
+      color: white;
+      font-size: 24px;
+      padding: 14px 18px;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      z-index: 9999;
+    }
+    .messenger-float:hover {
+      background: #006edc;
+      transform: scale(1.1);
+    }
+  </style>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
-
