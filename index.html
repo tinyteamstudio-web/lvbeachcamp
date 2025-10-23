@@ -1,260 +1,215 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>LV Beach Camp | Native Comfort by the Sea</title>
-  <link rel="icon" href="assets/logo.jpg" type="image/jpg">
-  
-  <!-- Google Fonts -->
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  
-  <!-- Main Styles -->
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="assets/style.css">
+
   <style>
+    :root {
+      --gold: #F6B65B;
+      --bamboo: #8A5A2B;
+      --ocean: #2F4930;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
-      color: #4b2e05;
       margin: 0;
-      padding: 0;
-      background-color: #fffaf4;
+      background-color: #fffaf5;
     }
 
-    header {
+    /* HEADER */
+    .site-header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      background-color: #fff;
-      padding: 10px 40px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      justify-content: space-between;
+      padding: 14px 22px;
+      background: rgba(255, 255, 255, 0.95);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
-    header img {
-      height: 70px;
-      border-radius: 50%;
+    .brand img {
+      height: 42px;
+      border-radius: 6px;
     }
 
-    header h1 {
-      font-family: 'Merriweather', serif;
-      font-size: 1.8rem;
-      color: #a15c02;
-      margin: 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #4b2e05;
-      margin: 0 15px;
+    .nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
       font-weight: 600;
+      color: var(--bamboo);
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--bamboo);
       transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: #a15c02;
+    .nav a:hover {
+      color: var(--gold);
     }
 
+    /* HERO */
     .hero {
-      background: url('assets/banner.jpg') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 120px 20px;
+      height: 85vh;
+      background-image: url('assets/sunrise.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
+      text-align: center;
+      color: white;
     }
 
-    .hero::after {
+    .hero::before {
       content: "";
       position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: 0;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
     }
 
     .hero-content {
       position: relative;
-      z-index: 1;
+      z-index: 2;
+      animation: fadeIn 1.2s ease forwards;
+      padding: 0 20px;
     }
 
-    .hero h2 {
+    .hero-content h1 {
       font-family: 'Merriweather', serif;
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 46px;
+      margin-bottom: 12px;
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+    .hero-content p {
+      font-size: 18px;
+      color: #f8f8f8;
+      margin: 0 0 25px;
     }
 
-    .hero a {
-      background-color: #f9a825;
-      color: white;
-      padding: 12px 30px;
-      border-radius: 25px;
+    .btn-cta {
+      background: linear-gradient(90deg, var(--gold), #f79c3b);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 40px;
       text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(246,182,91,0.25);
     }
 
-    .hero a:hover {
-      background-color: #d17f00;
+    .btn-cta:hover {
+      background: linear-gradient(90deg, #f79c3b, var(--gold));
+    }
+
+    /* MAIN */
+    .main {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 0 18px;
+      color: #4b2e05;
     }
 
     section {
-      padding: 60px 20px;
-      text-align: center;
+      margin-bottom: 40px;
     }
 
-    h2.section-title {
-      font-family: 'Merriweather', serif;
-      color: #a15c02;
-      font-size: 2rem;
-      margin-bottom: 20px;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
     }
 
-    .accommodations {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .room-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      overflow: hidden;
-      width: 280px;
-      text-align: left;
-      transition: transform 0.3s;
-    }
-
-    .room-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .room-card img {
+    .gallery img {
       width: 100%;
       height: 200px;
       object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
     }
 
-    .room-card .content {
-      padding: 15px;
-    }
-
-    .room-card h3 {
-      font-family: 'Merriweather', serif;
-      margin: 0;
-      color: #a15c02;
-    }
-
-    .room-card p {
-      font-size: 0.95rem;
-      margin: 5px 0;
+    .gallery img:hover {
+      transform: scale(1.03);
     }
 
     footer {
-      background-color: #4b2e05;
-      color: white;
+      background: linear-gradient(180deg, #8A5A2B, #c66f2b);
+      color: #fff;
+      padding: 36px 16px;
       text-align: center;
-      padding: 30px 15px;
+      font-size: 14px;
     }
 
-    footer img {
-      height: 60px;
-      border-radius: 50%;
-      margin-bottom: 10px;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    footer a {
-      color: #ffcc80;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+    @media(max-width: 640px) {
+      .hero-content h1 { font-size: 30px; }
+      .hero-content p { font-size: 15px; }
     }
   </style>
 </head>
-<body>
 
-  <header>
-    <div class="logo">
-      <img src="assets/logo.jpg" alt="LV Beach Camp Logo">
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html"><img src="assets/logo.jpg" alt="LV Beach Camp logo"></a>
     </div>
-    <h1>LV Beach Camp</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#rooms">Rooms</a>
-      <a href="#contact">Contact</a>
-      <a href="booking.html">Book Now</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Booking</a>
+      <a href="gcash.html">Payments</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-content">
-      <h2>Native Comfort by the Sea</h2>
-      <p>Experience cozy kubos, glamping tents, and beachfront cottages — all in one tropical paradise.</p>
-      <a href="booking.html">Book Your Stay</a>
+      <h1>Welcome to LV Beach Camp</h1>
+      <p>Find your peace where the sun meets the sea 🌅</p>
+      <a href="booking.html" class="btn-cta">Book Your Stay</a>
     </div>
   </section>
 
-  <section id="about">
-    <h2 class="section-title">About LV Beach Camp</h2>
-    <p>LV Beach Camp offers a perfect mix of native cottages, beachfront kubos, and glamping tents — all built for guests who want to unwind close to nature. Whether you’re traveling solo, with friends, or family, our beach camp welcomes you to relax, recharge, and reconnect with the sea.</p>
-  </section>
+  <main class="main">
+    <section>
+      <h2 style="font-family:'Merriweather',serif;color:var(--bamboo);">Native Comfort by the Sea</h2>
+      <p>Experience cozy kubos, glamping tents, and beachfront cottages — all in one tropical paradise. At LV Beach Camp, every morning greets you with the sound of waves and golden sunlight.</p>
+    </section>
 
-  <section id="rooms">
-    <h2 class="section-title">Our Accommodations</h2>
-    <div class="accommodations">
-      <div class="room-card">
-        <img src="bahaykubo.jpg" alt="Bahay Kubo Beach Front">
-        <div class="content">
-          <h3>Bahay Kubo</h3>
-          <p>₱1,200–₱1,450 / night</p>
-        </div>
-      </div>
+    <section class="gallery">
+      <img src="assets/rooms/beachfront-tent.jpg" alt="Beachfront Tent">
+      <img src="assets/rooms/family-kubo.jpg" alt="Family Kubo">
+      <img src="assets/rooms/teepee-new.jpg" alt="Teepee House">
+    </section>
 
-      <div class="room-card">
-        <img src="rooma.jpg" alt="Native House A & B">
-        <div class="content">
-          <h3>Native House A & B</h3>
-          <p>₱850–₱950 / night</p>
-        </div>
-      </div>
-
-      <div class="room-card">
-        <img src="teepee new.jpg" alt="Teepee House">
-        <div class="content">
-          <h3>Teepee House</h3>
-          <p>₱1,000–₱1,200 / night</p>
-        </div>
-      </div>
-
-      <div class="room-card">
-        <img src="mediumcampingtent.jpg" alt="Medium Camping Tent">
-        <div class="content">
-          <h3>Medium Camping Tent</h3>
-          <p>₱500 / tent (3–4 pax)</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2 class="section-title">Contact Us</h2>
-    <p>📍 LV Beach Camp, Brgy. Ingan, Hinunangan, Southern Leyte</p>
-    <p>📞 <a href="tel:+639462911866">+63 946 291 1866</a></p>
-    <p>📧 <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a></p>
-    <p>💬 <a href="https://www.facebook.com/lvbeachcamp" target="_blank">Visit our Facebook Page</a></p>
-  </section>
+    <section>
+      <p style="text-align:center;"><a href="booking.html" class="btn-cta">Reserve Your Spot</a></p>
+    </section>
+  </main>
 
   <footer>
-    <img src="assets/logo.jpg" alt="LV Beach Camp Logo">
-    <p><strong>LV Beach Camp</strong> — native comfort by the sea.</p>
-    <p>&copy; 2025 LV Beach Camp | All Rights Reserved</p>
-    <p><a href="booking.html">Book Now</a> | <a href="gcash.html">Payments</a></p>
+    <p>© 2025 LV Beach Camp | Native Comfort by the Sea</p>
+    <p>📞 +63 946 291 1866 | ✉️ lvbeachcamp@gmail.com</p>
   </footer>
-
 </body>
 </html>
