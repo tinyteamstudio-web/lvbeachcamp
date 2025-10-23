@@ -1,113 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LV Beach Camp</title>
-  <meta name="description" content="Beachfront accommodations and tours by LV Beach Camp. Stay, unwind, and enjoy island life.">
-  <link rel="icon" href="assets/images/Logo.jpg" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | LV Beach Camp</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <!-- 🌴 Navigation -->
-  <nav class="navbar container">
-    <a href="index.html" class="brand">
-      <img src="assets/images/Logo.jpg" alt="LV Beach Camp logo" class="logo">
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="listings.html">Stay</a></li>
-      <li><a href="gallery.html" class="active">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a class="btn" href="booking.html">Book Now</a></li>
-    </ul>
-    <button id="navToggle" class="nav-toggle">☰</button>
-  </nav>
 
-  <!-- 📸 Gallery Header -->
-  <header class="page-header">
-    <div class="container">
-      <h1>Gallery</h1>
-      <p>Explore the beauty of LV Beach Camp — from cozy beachfront kubos to breathtaking island views and delicious local food.</p>
+<header class="site-header">
+  <div class="header-left">
+    <a href="index.html"><img src="assets/logo.png" alt="LV Beach Camp Logo" class="logo"></a>
+    <div class="header-text">
+      <h1>LV Beach Camp</h1>
+      <p>native comfort by the sea</p>
     </div>
-  </header>
+  </div>
+  <div class="header-right">
+    <p>📞 +63 946 291 1866</p>
+    <p>✉️ <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a></p>
+    <p>💬 <a href="https://m.me/LVBeachCamp" target="_blank">Message us on Facebook</a></p>
+  </div>
+</header>
 
-  <!-- 🖼️ Gallery Grid -->
-  <main class="container">
-    <div class="grid gallery-grid" id="galleryGrid">
-      <!-- Images will appear here -->
+<section class="gallery">
+  <h2>Accommodations & Rates</h2>
+  <div class="gallery-grid">
+
+    <div class="room-card">
+      <img src="assets/bahaykubo.jpg" alt="Bahay Kubo Beach Front">
+      <h3>Bahay Kubo (Beach Front)</h3>
+      <p>₱1,200 – ₱1,450 per night for 2 pax</p>
+      <a href="booking.html" class="btn-primary">Book Now</a>
     </div>
-  </main>
 
-  <!-- 📍 Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <img src="assets/images/Logo.jpg" alt="LV Beach Camp logo" class="logo-small" />
-        <p>LV Beach Camp — native comfort by the sea.</p>
-      </div>
-      <div>
-        <h4>Find Us</h4>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d391.972... (paste your full embed code here)"
-          width="280" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p>Phone: +63-XXXXXXXXXX</p>
-        <p>Email: hello@lvbeachcamp.online</p>
-        <a href="contact.html">Message Us</a>
-      </div>
+    <div class="room-card">
+      <img src="assets/rooma.jpg" alt="Native House A & B">
+      <h3>Native House A & B</h3>
+      <p>₱850 – ₱950 per night for 2 pax<br>+ ₱200 per extra head</p>
+      <a href="booking.html" class="btn-primary">Book Now</a>
     </div>
-    <div class="container copyright">
-      <p>© <span id="year"></span> LV Beach Camp. All rights reserved.</p>
+
+    <div class="room-card">
+      <img src="assets/teepee new.jpg" alt="Teepee House Beachfront">
+      <h3>Teepee House (Beachfront)</h3>
+      <p>₱1,000 – ₱1,200 per night<br>+ ₱350 with aircon</p>
+      <a href="booking.html" class="btn-primary">Book Now</a>
     </div>
-  </footer>
 
-  <!-- 🪄 Lightbox Script -->
-  <script>
-    const galleryImages = [
-      "assets/images/gallery-beach.jpg",
-      "assets/images/gallery-kubo.jpg",
-      "assets/images/gallery-food.jpg",
-      "assets/images/gallery-twinisland.jpg",
-      "assets/images/gallery-sunset.jpg",
-      "assets/images/gallery-fun.jpg"
-    ];
+    <div class="room-card">
+      <img src="assets/smallcampingtent.jpg" alt="Small Camping Tent">
+      <h3>Small Camping Tent</h3>
+      <p>₱400 per tent (2–3 pax)</p>
+      <a href="booking.html" class="btn-primary">Book Now</a>
+    </div>
 
-    const galleryGrid = document.getElementById("galleryGrid");
+    <div class="room-card">
+      <img src="assets/mediumcampingtent.jpg" alt="Medium Camping Tent">
+      <h3>Medium Camping Tent</h3>
+      <p>₱500 per tent (3–4 pax)</p>
+      <a href="booking.html" class="btn-primary">Book Now</a>
+    </div>
 
-    // Generate image cards
-    galleryImages.forEach((img) => {
-      const div = document.createElement("div");
-      div.classList.add("gallery-card");
-      div.innerHTML = `<img src="${img}" alt="LV Beach Camp">`;
-      galleryGrid.appendChild(div);
-    });
+    <div class="room-card">
+      <img src="assets/gazebotents.jpg" alt="Gazebo Tent">
+      <h3>Gazebo Tent (Group)</h3>
+      <p>₱600 – ₱700 (6-hour use)</p>
+      <a href="booking.html" class="btn-primary">Book Now</a>
+    </div>
 
-    // Lightbox
-    const lightbox = document.createElement("div");
-    lightbox.id = "lightbox";
-    document.body.appendChild(lightbox);
+    <div class="room-card">
+      <img src="assets/umbrella.jpg" alt="Beach Umbrella">
+      <h3>Beach Umbrella</h3>
+      <p>₱200 – ₱300 (6-hour use)</p>
+      <a href="booking.html" class="btn-primary">Book Now</a>
+    </div>
 
-    const imgs = document.querySelectorAll(".gallery-grid img");
-    imgs.forEach(img => {
-      img.addEventListener("click", () => {
-        lightbox.classList.add("active");
-        const newImg = document.createElement("img");
-        newImg.src = img.src;
-        while (lightbox.firstChild) lightbox.removeChild(lightbox.firstChild);
-        lightbox.appendChild(newImg);
-      });
-    });
+  </div>
+</section>
 
-    lightbox.addEventListener("click", e => {
-      if (e.target !== e.currentTarget) return;
-      lightbox.classList.remove("active");
-    });
-  </script>
+<section class="rates">
+  <h2>Complete Room Rates</h2>
+  <img src="assets/new room rates.jpg" alt="LV Beach Camp Full Rate List" class="rate-image">
+</section>
+
+<footer>
+  <img src="assets/logo.png" alt="LV Beach Camp logo" class="footer-logo">
+  <p><strong>LV Beach Camp</strong> — native comfort by the sea.</p>
+  <p>© <span id="year"></span> LV Beach Camp | All Rights Reserved</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
-
