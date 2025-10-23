@@ -4,129 +4,257 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LV Beach Camp | Native Comfort by the Sea</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/logo.jpg" type="image/jpg">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #4b2e05;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf4;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    header img {
+      height: 70px;
+      border-radius: 50%;
+    }
+
+    header h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.8rem;
+      color: #a15c02;
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b2e05;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #a15c02;
+    }
+
+    .hero {
+      background: url('assets/banner.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .hero a {
+      background-color: #f9a825;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .hero a:hover {
+      background-color: #d17f00;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h2.section-title {
+      font-family: 'Merriweather', serif;
+      color: #a15c02;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .accommodations {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .room-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 280px;
+      text-align: left;
+      transition: transform 0.3s;
+    }
+
+    .room-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .room-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .room-card .content {
+      padding: 15px;
+    }
+
+    .room-card h3 {
+      font-family: 'Merriweather', serif;
+      margin: 0;
+      color: #a15c02;
+    }
+
+    .room-card p {
+      font-size: 0.95rem;
+      margin: 5px 0;
+    }
+
+    footer {
+      background-color: #4b2e05;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    footer img {
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: #ffcc80;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- 🌴 HEADER -->
-  <header class="site-header">
-    <div class="header-left">
-      <a href="index.html"><img src="assets/logo.png" alt="LV Beach Camp Logo" class="logo"></a>
-      <div class="header-text">
-        <h1>LV Beach Camp</h1>
-        <p>native comfort by the sea</p>
-      </div>
+  <header>
+    <div class="logo">
+      <img src="assets/logo.jpg" alt="LV Beach Camp Logo">
     </div>
-    <div class="header-right">
-      <p>📞 +63 946 291 1866</p>
-      <p>✉️ <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a></p>
-      <p>💬 <a href="https://m.me/lvbeachcamp" target="_blank">Message us on Facebook</a></p>
-    </div>
+    <h1>LV Beach Camp</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#contact">Contact</a>
+      <a href="booking.html">Book Now</a>
+    </nav>
   </header>
 
-  <!-- 🌅 HERO SECTION -->
-  <section class="hero" style="background:url('assets/bahaykubo.jpg') center/cover no-repeat; position:relative; height:80vh; display:flex; align-items:center; justify-content:center; text-align:center;">
-    <div style="background:rgba(0,0,0,0.4); padding:40px; border-radius:20px; color:#fff;">
-      <h2 style="font-family:'Pacifico',cursive; font-size:2.5rem; margin-bottom:15px;">Welcome to LV Beach Camp</h2>
-      <p style="max-width:600px; margin:auto; font-size:1.1rem;">Experience native-style comfort along the shore. Enjoy our kubos, tents, and cozy seaside breeze — all set in a tropical paradise.</p>
-      <br>
-      <a href="booking.html" class="btn-primary">Book Your Stay</a>
-      <a href="gallery.html" class="btn-secondary" style="margin-left:10px;">View Our Rooms</a>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Native Comfort by the Sea</h2>
+      <p>Experience cozy kubos, glamping tents, and beachfront cottages — all in one tropical paradise.</p>
+      <a href="booking.html">Book Your Stay</a>
     </div>
   </section>
 
-  <!-- 🏕️ ABOUT -->
-  <section class="about" style="text-align:center; padding:60px 20px; max-width:900px; margin:auto;">
-    <h2 style="color:#a6571d;">About LV Beach Camp</h2>
+  <section id="about">
+    <h2 class="section-title">About LV Beach Camp</h2>
     <p>LV Beach Camp offers a perfect mix of native cottages, beachfront kubos, and glamping tents — all built for guests who want to unwind close to nature. Whether you’re traveling solo, with friends, or family, our beach camp welcomes you to relax, recharge, and reconnect with the sea.</p>
   </section>
 
-  <!-- 📸 ROOMS PREVIEW -->
-  <section class="rooms-preview" style="text-align:center; padding:40px 20px; background:#fff;">
-    <h2 style="color:#a6571d;">Our Accommodations</h2>
-    <div class="gallery-grid">
-
+  <section id="rooms">
+    <h2 class="section-title">Our Accommodations</h2>
+    <div class="accommodations">
       <div class="room-card">
-        <img src="assets/bahaykubo.jpg" alt="Bahay Kubo Beach Front">
-        <h3>Bahay Kubo (Beach Front)</h3>
-        <p>₱1,200 – ₱1,450 / night</p>
+        <img src="bahaykubo.jpg" alt="Bahay Kubo Beach Front">
+        <div class="content">
+          <h3>Bahay Kubo</h3>
+          <p>₱1,200–₱1,450 / night</p>
+        </div>
       </div>
 
       <div class="room-card">
-        <img src="assets/rooma.jpg" alt="Native House A & B">
-        <h3>Native House A & B</h3>
-        <p>₱850 – ₱950 / night</p>
+        <img src="rooma.jpg" alt="Native House A & B">
+        <div class="content">
+          <h3>Native House A & B</h3>
+          <p>₱850–₱950 / night</p>
+        </div>
       </div>
 
       <div class="room-card">
-        <img src="assets/teepee new.jpg" alt="Teepee House Beachfront">
-        <h3>Teepee House (Beachfront)</h3>
-        <p>₱1,000 – ₱1,200 / night</p>
+        <img src="teepee new.jpg" alt="Teepee House">
+        <div class="content">
+          <h3>Teepee House</h3>
+          <p>₱1,000–₱1,200 / night</p>
+        </div>
       </div>
 
       <div class="room-card">
-        <img src="assets/mediumcampingtent.jpg" alt="Medium Tent">
-        <h3>Medium Camping Tent</h3>
-        <p>₱500 / tent (3–4 pax)</p>
+        <img src="mediumcampingtent.jpg" alt="Medium Camping Tent">
+        <div class="content">
+          <h3>Medium Camping Tent</h3>
+          <p>₱500 / tent (3–4 pax)</p>
+        </div>
       </div>
-
     </div>
-    <a href="gallery.html" class="btn-primary" style="margin-top:20px;">View All Rooms</a>
   </section>
 
-  <!-- 📞 CONTACT -->
-  <section class="contact" style="text-align:center; padding:60px 20px;">
-    <h2 style="color:#a6571d;">Contact Us</h2>
-    <p>📍 LV Beach Camp, Coastal Road, Philippines</p>
+  <section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p>📍 LV Beach Camp, Brgy. Ingan, Hinunangan, Southern Leyte</p>
     <p>📞 <a href="tel:+639462911866">+63 946 291 1866</a></p>
-    <p>✉️ <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a></p>
-    <p>💬 <a href="https://facebook.com/lvbeachcamp" target="_blank">facebook.com/lvbeachcamp</a></p>
+    <p>📧 <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a></p>
+    <p>💬 <a href="https://www.facebook.com/lvbeachcamp" target="_blank">Visit our Facebook Page</a></p>
   </section>
 
-  <!-- 🌴 FOOTER -->
   <footer>
-    <img src="assets/logo.png" alt="LV Beach Camp logo" class="footer-logo">
+    <img src="assets/logo.jpg" alt="LV Beach Camp Logo">
     <p><strong>LV Beach Camp</strong> — native comfort by the sea.</p>
-    <p>© <span id="year"></span> LV Beach Camp | All Rights Reserved</p>
-    <p>
-      <a href="booking.html">Book Now</a> |
-      <a href="gallery.html">Our Rooms</a> |
-      <a href="gcash.html">Payments</a>
-    </p>
-    <p>💬 <a href="https://facebook.com/lvbeachcamp" target="_blank">Visit our Facebook Page</a></p>
+    <p>&copy; 2025 LV Beach Camp | All Rights Reserved</p>
+    <p><a href="booking.html">Book Now</a> | <a href="gcash.html">Payments</a></p>
   </footer>
-
-  <!-- 💬 MESSENGER FLOAT -->
-  <a href="https://m.me/lvbeachcamp" class="messenger-float" target="_blank" title="Message us on Facebook">
-    💬
-  </a>
-
-  <style>
-    .messenger-float {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #0084ff;
-      color: white;
-      font-size: 24px;
-      padding: 14px 18px;
-      border-radius: 50%;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-      z-index: 9999;
-    }
-    .messenger-float:hover {
-      background: #006edc;
-      transform: scale(1.1);
-    }
-  </style>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 
 </body>
 </html>
