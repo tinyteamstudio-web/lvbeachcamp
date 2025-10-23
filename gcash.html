@@ -3,39 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Payments — LV Beach Camp — Native Comfort by the Sea</title>
+  <title>Payments — LV Beach Camp</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand"><a href="index.html"><img src="assets/logo.jpg" alt="LV Beach Camp logo"></a></div>
-    <nav class="nav"><a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="booking.html">Booking</a><a href="gcash.html" class="active">Payments</a><a href="contact.html">Contact</a></nav>
-  </header>
+<header class="site-header">
+  <div class="brand"><a href="index.html"><img src="assets/logo.jpg" alt="LV Beach Camp"></a></div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="booking.html">Booking</a>
+    <a class="active" href="gcash.html">Payments</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <section class="hero" style="background-image:url('assets/sunrise.jpg');">
-    <div class="hero-inner">
-      <h1 style="font-family:'Merriweather',serif;font-size:36px;margin:0">Payments & Upload Proof</h1>
-      <p style="margin:8px 0 0;color:#fff">Choose a payment method below and upload your screenshot for confirmation.</p>
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Payments & Upload Proof</h1>
+    <p>Choose a payment method and upload your proof so we can confirm your booking.</p>
+  </div>
+</section>
+
+<main class="container" id="main" role="main">
+  <div class="card">
+    <h2 style="font-family:'Merriweather',serif;color:var(--bamboo);text-align:center;margin-top:0">Payment Options</h2>
+
+    <div class="payment-cards" style="margin-top:12px">
+      <div class="payment-card">
+        <img src="assets/1.png" alt="GCash QR">
+        <p style="margin-top:8px"><strong>GCash</strong><br>Eliza Veloso</p>
+      </div>
+
+      <div class="payment-card">
+        <img src="assets/2.png" alt="PayMaya QR">
+        <p style="margin-top:8px"><strong>PayMaya</strong><br>Eliza Veloso</p>
+      </div>
+
+      <div class="payment-card">
+        <img src="assets/3.png" alt="BDO QR">
+        <p style="margin-top:8px"><strong>BDO</strong><br>LV Beach Camp</p>
+      </div>
+
+      <div class="payment-card">
+        <img src="assets/4.png" alt="PNB QR">
+        <p style="margin-top:8px"><strong>PNB</strong><br>LV Beach Camp</p>
+      </div>
     </div>
-  </section>
 
-  <main class="fade-section" id="main">
-    <h2 style="font-family:'Merriweather',serif;color:var(--bamboo);text-align:center;margin-top:0">Choose Your Payment Method</h2>
-
-    <div class="cards" style="margin-top:14px">
-      <div class="card"><img src="assets/1.png" alt="GCash QR"><p style="margin:8px 0 0"><strong>GCash</strong></p></div>
-      <div class="card"><img src="assets/2.png" alt="PayMaya QR"><p style="margin:8px 0 0"><strong>PayMaya</strong></p></div>
-      <div class="card"><img src="assets/3.png" alt="BDO QR"><p style="margin:8px 0 0"><strong>BDO</strong></p></div>
-      <div class="card"><img src="assets/4.png" alt="PNB QR"><p style="margin:8px 0 0"><strong>PNB</strong></p></div>
-    </div>
-
-    <div class="card form-wrap" style="margin-top:22px;padding:18px">
+    <div style="margin-top:18px" class="card">
       <form id="paymentForm" action="https://script.google.com/macros/s/AKfycbzGqwndckPE7RBkPo3CuxynoAmxrH5v8wKZI4Zut2jmzgmczDkhepUr_uPWLUePLpK0/exec" method="POST" enctype="multipart/form-data">
-        <h3 style="font-family:'Merriweather',serif;color:var(--bamboo);text-align:center;margin:0 0 12px">Upload Your Payment Proof</h3>
-
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
           <div><label>Full Name</label><input name="name" type="text" required></div>
           <div><label>Contact Number</label><input name="contact" type="text" required></div>
@@ -52,60 +72,55 @@
         <label style="display:block;margin-top:12px">Message (optional)</label>
         <textarea name="message" rows="4" placeholder="Any details"></textarea>
 
-        <div style="text-align:center">
-          <button type="submit" class="btn-cta" style="border:none;margin-top:12px">Submit Payment Proof</button>
+        <div style="text-align:center;margin-top:12px">
+          <button type="submit" class="submit">Submit Payment Proof</button>
         </div>
 
         <div id="thank" style="display:none;text-align:center;margin-top:12px;padding:10px;background:#f4f4f4;border-radius:10px">✅ Thank you — your proof was submitted. We’ll verify and confirm shortly.</div>
       </form>
     </div>
-  </main>
-
-  <div class="floating-book"><a href="booking.html">Book Now</a></div>
-
-  <div id="messenger">
-    <div id="msgtip">💬 Chat with us — we’re online!</div>
-    <a id="msglink" href="https://www.facebook.com/lvbeachcamp/" target="_blank" rel="noopener">Messenger</a>
   </div>
+</main>
 
-  <footer class="footer">
-    <p>© 2025 LV Beach Camp | Native Comfort by the Sea</p>
-    <p>📞 +63 946 291 1866 | ✉️ lvbeachcamp@gmail.com</p>
-  </footer>
+<div class="floating-book"><a href="booking.html">Book Now</a></div>
+
+<div id="messenger">
+  <div id="msgtip">💬 Chat with us — we’re online!</div>
+  <a id="msglink" href="https://www.facebook.com/lvbeachcamp/" target="_blank" rel="noopener">Messenger</a>
+</div>
+
+<footer class="site-footer">
+  <p>© 2025 LV Beach Camp | Native Comfort by the Sea</p>
+  <p>📞 +63 946 291 1866 | ✉️ lvbeachcamp@gmail.com</p>
+</footer>
 
 <script>
-document.addEventListener('DOMContentLoaded', ()=>{
-  const main = document.getElementById('main');
-  requestAnimationFrame(()=> main.classList.add('visible'));
+/* page fade */
+document.addEventListener('DOMContentLoaded', ()=>{ requestAnimationFrame(()=> document.getElementById('main').classList.add('visible')); });
 
-  // handle upload to Apps Script via fetch
-  (function(){
-    const form = document.getElementById('paymentForm');
-    const thank = document.getElementById('thank');
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      const btn = form.querySelector('button[type=submit]');
-      btn.disabled = true; btn.textContent = 'Submitting...';
-      const fd = new FormData(form);
-      fetch(form.action, { method:'POST', body: fd, mode:'cors' })
-        .then(r => {
-          // apps script may return text or json; handle gracefully
-          try { return r.json(); } catch(err){ return r.text(); }
-        })
-        .then(()=>{ form.style.display='none'; thank.style.display='block'; })
-        .catch(()=>{ alert('Submission failed — try again or message us on Facebook.'); btn.disabled=false; btn.textContent='Submit Payment Proof'; });
-    });
-  })();
-
-  // nav fade
-  document.querySelectorAll('.nav a, .floating-book a').forEach(el=>{
-    el.addEventListener('click',(e)=>{ const href=el.getAttribute('href'); if(!href||href.startsWith('http')||href.startsWith('mailto:')||href.startsWith('#')) return; e.preventDefault(); main.classList.remove('visible'); setTimeout(()=>window.location=href,420);});
+/* form submit handler (Apps Script) */
+(function(){
+  const form = document.getElementById('paymentForm');
+  const thank = document.getElementById('thank');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; btn.textContent = 'Submitting...';
+    const fd = new FormData(form);
+    fetch(form.action, { method:'POST', body: fd, mode:'cors' })
+      .then(r=>r.json()).then(()=>{ form.style.display='none'; thank.style.display='block'; })
+      .catch(()=>{ alert('Submission failed — try again or message us on Facebook.'); btn.disabled=false; btn.textContent='Submit Payment Proof'; });
   });
+})();
 
-  // messenger tip
-  setTimeout(()=>{ const tip=document.getElementById('msgtip'); tip.style.display='block'; tip.style.opacity=0; tip.style.transition='opacity .35s'; requestAnimationFrame(()=>tip.style.opacity=1)},1200);
-  setTimeout(()=>{ const tip=document.getElementById('msgtip'); if(tip){ tip.style.opacity=0; setTimeout(()=>tip.style.display='none',400)} },9000);
+/* nav fade */
+document.querySelectorAll('.nav a, .floating-book a').forEach(el=>{
+  el.addEventListener('click',(e)=>{ const href=el.getAttribute('href'); if(!href||href.startsWith('http')||href.startsWith('mailto:')||href.startsWith('#')) return; e.preventDefault(); document.getElementById('main').classList.remove('visible'); setTimeout(()=>window.location=href,420);});
 });
+
+/* messenger tip */
+setTimeout(()=>{ const tip=document.getElementById('msgtip'); tip.style.display='block'; tip.style.opacity=0; tip.style.transition='opacity .35s'; requestAnimationFrame(()=>tip.style.opacity=1); },1200);
+setTimeout(()=>{ const tip=document.getElementById('msgtip'); if(tip){ tip.style.opacity=0; setTimeout(()=>tip.style.display='none',400)} },9000);
 </script>
 </body>
 </html>
