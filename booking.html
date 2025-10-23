@@ -3,64 +3,72 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Booking — LV Beach Camp — Native Comfort by the Sea</title>
+  <title>Booking — LV Beach Camp</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand"><a href="index.html"><img src="assets/logo.jpg" alt="LV Beach Camp"></a></div>
-    <nav class="nav"><a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="booking.html" class="active">Booking</a><a href="gcash.html">Payments</a><a href="contact.html">Contact</a></nav>
-  </header>
+<header class="site-header">
+  <div class="brand"><a href="index.html"><img src="assets/logo.jpg" alt="LV Beach Camp"></a></div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a class="active" href="booking.html">Booking</a>
+    <a href="gcash.html">Payments</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <section class="hero" style="background-image:url('assets/sunrise.jpg');">
-    <div class="hero-inner">
-      <h1 style="font-family:'Merriweather',serif;font-size:40px;margin:0">Book Your Stay</h1>
-      <p style="margin:10px 0 0;color:#fff">Fill out the booking form and we’ll follow up with availability and payment instructions.</p>
-    </div>
-  </section>
-
-  <main class="fade-section" id="main" role="main">
-    <div class="card" style="padding:18px;border-radius:14px">
-      <div class="embed-wrap" aria-live="polite">
-        <!-- embedded Google Form (keep as-is) -->
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYrfwtprlgI2U5KllRZgoxu7Kx6jodjMcOz1MhRSvqQgT5qQ/viewform?embedded=true" title="Booking Form" loading="lazy" aria-label="Booking form"></iframe>
-      </div>
-
-      <div style="text-align:center;margin-top:14px;color:#333;font-weight:600">
-        💬 Please make sure to upload your payment proof after booking.<br>
-        You can do this through our <a href="gcash.html">Payment Page</a> or via Messenger.
-      </div>
-    </div>
-  </main>
-
-  <div class="floating-book"><a href="booking.html">Book Now</a></div>
-
-  <!-- Messenger -->
-  <div id="messenger">
-    <div id="msgtip">💬 Chat with us — we’re online!</div>
-    <a id="msglink" href="https://www.facebook.com/lvbeachcamp/" target="_blank" rel="noopener">Messenger</a>
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Book Your Island Stay</h1>
+    <p>Reserve your kubo, tent, or cottage and we’ll confirm shortly after receiving payment proof.</p>
   </div>
+</section>
 
-  <footer class="footer">
-    <p>© 2025 LV Beach Camp — Native Comfort by the Sea</p>
-    <p>📞 +63 946 291 1866 | ✉️ lvbeachcamp@gmail.com</p>
-  </footer>
+<main class="container" id="main" role="main">
+  <div class="card center" style="padding:28px">
+    <!-- embedded Google Form (balanced width) -->
+    <div style="display:flex;justify-content:center">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYrfwtprlgI2U5KllRZgoxu7Kx6jodjMcOz1MhRSvqQgT5qQ/viewform?embedded=true"
+              width="80%" height="850" style="border:none;border-radius:14px;box-shadow:0 12px 38px rgba(0,0,0,0.08);" loading="lazy">
+      </iframe>
+    </div>
+
+    <p class="small center" style="margin-top:14px">💬 <strong>Please make sure to upload your payment proof after booking.</strong> You can do this through our <a href="gcash.html">Payment Page</a> or via Messenger.</p>
+  </div>
+</main>
+
+<div class="floating-book"><a href="booking.html">Book Now</a></div>
+
+<div id="messenger">
+  <div id="msgtip">💬 Chat with us — we’re online!</div>
+  <a id="msglink" href="https://www.facebook.com/lvbeachcamp/" target="_blank" rel="noopener">Messenger</a>
+</div>
+
+<footer class="site-footer">
+  <p>© 2025 LV Beach Camp | Native Comfort by the Sea</p>
+  <p>📞 +63 946 291 1866 | ✉️ lvbeachcamp@gmail.com</p>
+</footer>
 
 <script>
-document.addEventListener('DOMContentLoaded', ()=>{
-  const main = document.getElementById('main');
-  requestAnimationFrame(()=> main.classList.add('visible'));
-  // nav fade
-  document.querySelectorAll('.nav a, .floating-book a').forEach(el=>{
-    el.addEventListener('click',(e)=>{ const href=el.getAttribute('href'); if(!href||href.startsWith('http')||href.startsWith('mailto:')||href.startsWith('#')) return; e.preventDefault(); main.classList.remove('visible'); setTimeout(()=>window.location=href,420);});
+document.addEventListener('DOMContentLoaded', ()=>{ requestAnimationFrame(()=> document.getElementById('main').classList.add('visible')); });
+
+document.querySelectorAll('.nav a, .floating-book a').forEach(el=>{
+  el.addEventListener('click', (e)=>{
+    const href = el.getAttribute('href');
+    if(!href || href.startsWith('http')||href.startsWith('mailto:')||href.startsWith('#')) return;
+    e.preventDefault();
+    document.getElementById('main').classList.remove('visible');
+    setTimeout(()=> window.location = href, 420);
   });
-  // messenger tip
-  setTimeout(()=>{ const tip=document.getElementById('msgtip'); tip.style.display='block'; tip.style.opacity=0; tip.style.transition='opacity .35s'; requestAnimationFrame(()=>tip.style.opacity=1)},1200);
-  setTimeout(()=>{ const tip=document.getElementById('msgtip'); if(tip){ tip.style.opacity=0; setTimeout(()=>tip.style.display='none',400)} },9000);
 });
+
+/* messenger tip */
+setTimeout(()=>{ const tip=document.getElementById('msgtip'); tip.style.display='block'; tip.style.opacity=0; tip.style.transition='opacity .35s'; requestAnimationFrame(()=> tip.style.opacity=1); }, 1200);
+setTimeout(()=>{ const tip=document.getElementById('msgtip'); if(tip){ tip.style.opacity=0; setTimeout(()=> tip.style.display='none',400); } }, 9000);
 </script>
 </body>
 </html>
