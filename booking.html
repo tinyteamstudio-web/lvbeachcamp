@@ -1,147 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book Your Stay | LV Beach Camp</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book Your Stay — LV Beach Camp</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
 
   <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(to bottom right, #b3ecff, #fffbe6);
-      margin: 0;
-      padding: 0;
-      color: #333;
+    :root {
+      --gold: #F6B65B;
+      --bamboo: #8A5A2B;
+      --ocean: #2F4930;
     }
 
-    header {
-      background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
-      height: 250px;
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #fffaf5;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 22px;
+      background: rgba(255,255,255,0.95);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .brand img {
+      height: 42px;
+      border-radius: 6px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      font-weight: 600;
+      color: var(--bamboo);
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--bamboo);
+      transition: color 0.3s;
+    }
+
+    .nav a:hover {
+      color: var(--gold);
+    }
+
+    /* HERO */
+    .hero {
+      height: 60vh;
+      background-image: url('assets/sunrise.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      color: white;
       position: relative;
+      color: white;
     }
 
-    header::after {
+    .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.4);
-      border-bottom-left-radius: 50% 15%;
-      border-bottom-right-radius: 50% 15%;
-    }
-
-    header h1 {
-      position: relative;
-      font-family: "Pacifico", cursive;
-      font-size: 2.5em;
+      background: rgba(0,0,0,0.45);
       z-index: 1;
     }
 
-    .booking-container {
-      max-width: 600px;
-      margin: -60px auto 80px;
-      background: #ffffffd9;
-      padding: 35px 45px;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(8px);
-    }
-
-    h2 {
+    .hero-text {
+      position: relative;
+      z-index: 2;
       text-align: center;
-      color: #007b83;
-      margin-bottom: 20px;
+      animation: fadeIn 1s ease forwards;
     }
 
-    label {
-      display: block;
-      margin-top: 12px;
-      font-weight: 600;
-      color: #444;
+    .hero-text h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 40px;
+      margin-bottom: 8px;
     }
 
-    input, select, textarea {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-top: 5px;
-      font-size: 14px;
-      box-sizing: border-box;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-
-    button {
-      display: block;
-      width: 100%;
-      background: linear-gradient(to right, #00a8a8, #00c8b8);
-      color: white;
+    .hero-text p {
+      color: #f8f8f8;
       font-size: 16px;
+    }
+
+    .form-section {
+      max-width: 900px;
+      margin: -40px auto 60px;
+      padding: 20px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      box-shadow: 0 8px 26px rgba(0,0,0,0.06);
+    }
+
+    iframe {
+      width: 100%;
+      min-height: 760px;
       border: none;
       border-radius: 8px;
-      padding: 12px;
-      margin-top: 25px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    button:hover {
-      background: linear-gradient(to right, #009088, #00b3a3);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0, 150, 136, 0.3);
-    }
-
-    .message {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 15px;
-      color: #007b83;
-      font-weight: 600;
-      display: none;
-    }
-
-    .error {
-      color: #d9534f;
     }
 
     footer {
+      background: linear-gradient(180deg, #8A5A2B, #c66f2b);
+      color: #fff;
+      padding: 36px 16px;
       text-align: center;
-      font-size: 13px;
-      color: #555;
-      padding-bottom: 20px;
+      font-size: 14px;
     }
 
-    footer a {
-      color: #007b83;
-      text-decoration: none;
-      font-weight: 600;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    @media(max-width:640px){
+      .hero-text h1{font-size:30px;}
     }
   </style>
 </head>
-<body>
 
-  <header>
-    <h1>LV Beach Camp</h1>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html"><img src="assets/logo.jpg" alt="LV Beach Camp logo"></a>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Booking</a>
+      <a href="gcash.html">Payments</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <div class="booking-container">
-    <h2>🌴 Book Your Stay</h2>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Book Your Stay</h1>
+      <p>Secure your perfect beach escape — fill out the form below.</p>
+    </div>
+  </section>
 
-    <f
+  <section class="form-section">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYrfwtprlgI2U5KllRZgoxu7Kx6jodjMcOz1MhRSvqQgT5qQ/viewform?embedded=true"></iframe>
+  </section>
+
+  <footer>
+    <p>© 2025 LV Beach Camp | Native Comfort by the Sea</p>
+    <p>📞 +63 946 291 1866 | ✉️ lvbeachcamp@gmail.com</p>
+  </footer>
+</body>
+</html>
