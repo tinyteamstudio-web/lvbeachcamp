@@ -1,167 +1,66 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Book Your Stay — LV Beach Camp</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
-  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
-
-  <style>
-    :root {
-      --gold: #F6B65B;
-      --bamboo: #8A5A2B;
-      --ocean: #2F4930;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background-color: #fffaf5;
-    }
-
-    .site-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 22px;
-      background: rgba(255,255,255,0.95);
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 50;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .brand img {
-      height: 42px;
-      border-radius: 6px;
-    }
-
-    .nav {
-      display: flex;
-      gap: 22px;
-      align-items: center;
-      font-weight: 600;
-      color: var(--bamboo);
-    }
-
-    .nav a {
-      text-decoration: none;
-      color: var(--bamboo);
-      transition: color 0.3s;
-    }
-
-    .nav a:hover {
-      color: var(--gold);
-    }
-
-    /* HERO */
-    .hero {
-      height: 60vh;
-      background-image: url('assets/sunrise.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      color: white;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-      z-index: 1;
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    .hero-text h1 {
-      font-family: 'Merriweather', serif;
-      font-size: 40px;
-      margin-bottom: 8px;
-    }
-
-    .hero-text p {
-      color: #f8f8f8;
-      font-size: 16px;
-    }
-
-    .form-section {
-      max-width: 900px;
-      margin: -40px auto 60px;
-      padding: 20px;
-      background: rgba(255,255,255,0.95);
-      border-radius: 12px;
-      box-shadow: 0 8px 26px rgba(0,0,0,0.06);
-    }
-
-    iframe {
-      width: 100%;
-      min-height: 760px;
-      border: none;
-      border-radius: 8px;
-    }
-
-    footer {
-      background: linear-gradient(180deg, #8A5A2B, #c66f2b);
-      color: #fff;
-      padding: 36px 16px;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media(max-width:640px){
-      .hero-text h1{font-size:30px;}
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Booking — LV Beach Camp — Native Comfort by the Sea</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+<style>
+:root{--gold:#F6B65B;--bamboo:#144d31;--bg:#fffaf5}
+*{box-sizing:border-box}body{font-family:'Poppins',sans-serif;margin:0;background:var(--bg)}
+.site-header{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:rgba(255,255,255,0.95);z-index:90}
+.brand img{height:70px;border-radius:8px}
+.nav{display:flex;gap:16px;color:var(--bamboo);font-weight:600}
+.hero{height:60vh;background-image:url('assets/sunrise.jpg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.35);z-index:0}
+.hero-text{position:relative;z-index:2;text-align:center;color:#fff;padding:0 18px}
+.form-container{max-width:920px;margin:-40px auto 60px;padding:20px;background:#fff;border-radius:12px;box-shadow:0 10px 26px rgba(0,0,0,0.07);transition:opacity .45s,transform .45s;opacity:0;transform:translateY(8px)}
+.form-container.visible{opacity:1;transform:none}
+iframe{width:100%;min-height:760px;border:0;border-radius:8px}
+.floating-book{position:fixed;right:18px;bottom:18px;z-index:120}
+#messenger{position:fixed;right:18px;bottom:88px;z-index:130;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+#msgtip{display:none;background:rgba(0,0,0,0.85);color:#fff;padding:10px 12px;border-radius:14px;font-weight:600;font-size:14px}
+#msglink{display:inline-block;background:#144d31;color:#fff;padding:12px 14px;border-radius:999px;box-shadow:0 8px 18px rgba(0,0,0,0.18);text-decoration:none;font-weight:700}
+footer{background:linear-gradient(180deg,#8A5A2B,#c66f2b);color:#fff;padding:32px 18px;text-align:center}
+@media(max-width:720px){ .brand img{height:50px} .hero{height:45vh} iframe{min-height:900px} }
+</style>
 </head>
-
 <body>
-  <header class="site-header">
-    <div class="brand">
-      <a href="index.html"><img src="assets/logo.jpg" alt="LV Beach Camp logo"></a>
-    </div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="booking.html">Booking</a>
-      <a href="gcash.html">Payments</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<header class="site-header">
+  <div class="brand"><a href="index.html"><img src="assets/logo.jpg" alt="LV Beach Camp"></a></div>
+  <nav class="nav"><a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="booking.html">Booking</a><a href="gcash.html">Payments</a><a href="contact.html">Contact</a></nav>
+</header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Book Your Stay</h1>
-      <p>Secure your perfect beach escape — fill out the form below.</p>
-    </div>
-  </section>
+<section class="hero"><div class="hero-text"><h1 style="font-family:'Merriweather',serif;font-size:40px;margin:0">Book Your Stay</h1><p style="margin:8px 0 0">Fill out the booking form and we’ll follow up with availability and payment instructions.</p></div></section>
 
-  <section class="form-section">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYrfwtprlgI2U5KllRZgoxu7Kx6jodjMcOz1MhRSvqQgT5qQ/viewform?embedded=true"></iframe>
-  </section>
+<main class="form-container" id="main" role="main">
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYrfwtprlgI2U5KllRZgoxu7Kx6jodjMcOz1MhRSvqQgT5qQ/viewform?embedded=true" title="Booking Form" loading="lazy"></iframe>
+</main>
 
-  <footer>
-    <p>© 2025 LV Beach Camp | Native Comfort by the Sea</p>
-    <p>📞 +63 946 291 1866 | ✉️ lvbeachcamp@gmail.com</p>
-  </footer>
+<div class="floating-book"><a href="booking.html" style="background:linear-gradient(90deg,var(--gold),#f79c3b);color:#fff;padding:12px 16px;border-radius:999px;text-decoration:none;font-weight:700">Book Now</a></div>
+
+<!-- Messenger -->
+<div id="messenger">
+  <div id="msgtip">💬 Chat with us — we’re online!</div>
+  <a id="msglink" href="https://www.facebook.com/lvbeachcamp/" target="_blank" rel="noopener">Messenger</a>
+</div>
+
+<footer>
+  <p>© 2025 LV Beach Camp — Native Comfort by the Sea</p>
+  <p>📞 +63 946 291 1866 | ✉️ lvbeachcamp@gmail.com</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{ requestAnimationFrame(()=>document.getElementById('main').classList.add('visible')); });
+document.querySelectorAll('.nav a, .floating-book a').forEach(el=>{
+  el.addEventListener('click', (e)=>{
+    const href=el.getAttribute('href'); if(!href||href.startsWith('http')||href.startsWith('mailto:')||href.startsWith('#')) return;
+    e.preventDefault(); const main=document.getElementById('main'); main.classList.remove('visible'); setTimeout(()=>window.location=href,420);
+  });
+});
+setTimeout(()=>{ const tip=document.getElementById('msgtip'); tip.style.display='block'; tip.style.opacity=0; tip.style.transition='opacity .35s'; requestAnimationFrame(()=>tip.style.opacity=1); },1200);
+setTimeout(()=>{ const tip=document.getElementById('msgtip'); if(tip){ tip.style.opacity=0; setTimeout(()=>tip.style.display='none',400);} },9000);
+</script>
 </body>
 </html>
