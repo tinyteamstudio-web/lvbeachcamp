@@ -3,115 +3,194 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>LV Beach Camp — Native Comfort by the Sea</title>
+  <title>LV Beach Camp — Escape & Unwind</title>
+  <meta name="description" content="LV Beach Camp — island stays, tours, and glamping by the sea." />
 
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Social / Meta (optional) -->
+  <meta name="theme-color" content="#0e6b5f" />
 </head>
-<body>
+<body class="page-loaded">
+  <!-- Site container -->
+  <div id="site">
 
-<header class="site-header" role="banner">
-  <div class="brand"><a href="index.html"><img src="assets/logo.jpg" alt="LV Beach Camp logo"></a></div>
-  <nav class="nav" role="navigation" aria-label="Main Navigation">
-    <a class="active" href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="booking.html">Booking</a>
-    <a href="gcash.html">Payments</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+    <!-- HEADER / NAV -->
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="#home" aria-label="LV Beach Camp home">
+          <img src="assets/images/logo.png" alt="LV Beach Camp logo" class="logo" />
+          <span class="brand-text">LV Beach Camp</span>
+        </a>
 
-<section class="hero" role="region" aria-label="Sunrise hero">
-  <div class="hero-inner">
-    <h1>Find your peace where the sun meets the sea</h1>
-    <p>Native comfort by the sea — cozy kubos, glamping tents, and beachfront mornings.</p>
-    <a class="btn" href="booking.html">Book Your Stay</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+            <span class="hamburger"></span>
+          </button>
+
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#packages" class="nav-link">Packages</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#booking" class="nav-link">Booking</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="controls">
+            <button id="theme-toggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">🌙</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section id="home" class="hero" aria-label="Sunrise hero">
+        <div class="hero-bg" role="img" aria-hidden="true"></div>
+        <div class="hero-overlay">
+          <h1 class="hero-title">Sunrise at LV Beach Camp</h1>
+          <p class="hero-sub">Wake up to ocean breeze, hammocks and island chill.</p>
+          <div class="hero-cta">
+            <a href="#booking" class="btn btn-primary">Book a Stay</a>
+            <a href="#packages" class="btn btn-ghost">View Packages</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="content-section fade-page">
+        <div class="container">
+          <h2>About LV Beach Camp</h2>
+          <p>LV Beach Camp is a small, idyllic beachfront campsite — tents, local island tours, and cozy shared kitchens. We aim for relaxed comfort with respectful eco-friendly practices.</p>
+        </div>
+      </section>
+
+      <!-- PACKAGES -->
+      <section id="packages" class="content-section fade-page">
+        <div class="container">
+          <h2>Our Packages</h2>
+          <div class="cards-grid">
+            <article class="card">
+              <img src="assets/images/package-glamping.jpg" alt="Glamping tent" />
+              <h3>Glamping Tent</h3>
+              <p>Comfortable beds, mosquito nets, and sunset views.</p>
+              <p class="price">From ₱2,500 / night</p>
+            </article>
+
+            <article class="card">
+              <img src="assets/images/package-camping.jpg" alt="Standard camping" />
+              <h3>Beach Camping</h3>
+              <p>Bring your own tent or rent a basic pitch.</p>
+              <p class="price">From ₱800 / night</p>
+            </article>
+
+            <article class="card">
+              <img src="assets/images/package-islandtour.jpg" alt="Island tour" />
+              <h3>Island Tour</h3>
+              <p>Half-day snorkeling + picnic on a sandbar.</p>
+              <p class="price">From ₱1,200 / person</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section id="gallery" class="content-section fade-page">
+        <div class="container">
+          <h2>Gallery</h2>
+          <div class="gallery-grid">
+            <!-- images auto-resize -->
+            <img src="assets/images/gallery1.jpg" alt="Sunrise view" />
+            <img src="assets/images/gallery2.jpg" alt="Campfire night" />
+            <img src="assets/images/gallery3.jpg" alt="Hammocks" />
+            <img src="assets/images/gallery4.jpg" alt="Kayaking" />
+          </div>
+        </div>
+      </section>
+
+      <!-- BOOKING -->
+      <section id="booking" class="content-section booking-section fade-page">
+        <div class="container narrow">
+          <h2>Booking & Payment</h2>
+          <p class="muted">Choose your dates below. A 30% deposit secures your reservation. Final payment on arrival (or via bank/PayPal).</p>
+
+          <div class="booking-grid">
+            <div class="booking-form">
+              <h3>Book Your Stay</h3>
+              <p class="small">Fill the embedded form — it’s fast and mobile friendly.</p>
+
+              <!-- Replace YOUR_FORM_ID with your form's ID -->
+              <div class="form-wrapper">
+                <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+              </div>
+            </div>
+
+            <aside class="payment-info">
+              <h3>Payment Options</h3>
+              <ul class="payments">
+                <li><strong>GCash</strong><br/>Name: LV Beach Camp<br/>Account: 09XXXXXXXXX</li>
+                <li><strong>Bank Transfer</strong><br/>Bank: Island Bank<br/>Account Name: LV Beach Camp<br/>Acct#: 123-456-789</li>
+                <li><strong>PayPal</strong><br/>paypal.me/lvbeachcamp</li>
+              </ul>
+
+              <div class="pay-instructions">
+                <p>After deposit, send proof to <a href="mailto:bookings@lvbeachcamp.com">bookings@lvbeachcamp.com</a> or via Messenger.</p>
+                <a class="btn btn-primary" href="#contact">Contact Support</a>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="content-section fade-page">
+        <div class="container narrow">
+          <h2>Contact</h2>
+          <p>Questions? Reach us by phone, email, or message.</p>
+
+          <ul class="contact-list">
+            <li><strong>Phone:</strong> <a href="tel:+639XXXXXXXXX">+63 9XX XXX XXXX</a></li>
+            <li><strong>Email:</strong> <a href="mailto:hello@lvbeachcamp.com">hello@lvbeachcamp.com</a></li>
+            <li><strong>Facebook:</strong> <a target="_blank" rel="noopener" href="https://www.facebook.com/YOUR_PAGE">fb.com/YOUR_PAGE</a></li>
+          </ul>
+
+          <div class="map-embed">
+            <!-- Optional: add a Google Maps iframe here -->
+            <img src="assets/images/map-placeholder.jpg" alt="Map placeholder" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <img src="assets/images/logo-footer.png" alt="LV Beach Camp logo" class="footer-logo" />
+          <p>© <span id="year"></span> LV Beach Camp — All rights reserved.</p>
+        </div>
+
+        <div class="footer-right">
+          <p>Contact: <a href="mailto:hello@lvbeachcamp.com">hello@lvbeachcamp.com</a> · <a href="tel:+639XXXXXXXXX">+63 9XX XXX XXXX</a></p>
+          <p><a href="#privacy">Privacy</a> · <a href="#terms">Terms</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Messenger bubble -->
+    <a id="messenger-bubble" class="messenger" href="https://m.me/YOUR_PAGE" target="_blank" rel="noopener" aria-label="Message us on Facebook">
+      <span class="tooltip">Message us on Facebook!</span>
+      <svg viewBox="0 0 24 24" class="messenger-icon" aria-hidden="true"><path d="M12 2C6.48 2 2 5.92 2 10.5c0 2.86 1.72 5.41 4.43 7.02L6 22l4.01-2.13c.8.22 1.64.35 2.49.35 5.52 0 10-3.92 10-8.5S17.52 2 12 2zM11 14l-3.5-4 4.5 1.5L16 8l-5 6z" fill="currentColor"/></svg>
+    </a>
+
   </div>
-</section>
 
-<main class="container" id="main" role="main" aria-live="polite">
-  <section class="card about">
-    <h2 style="font-family:'Merriweather',serif;color:var(--bamboo);margin-top:0">About LV Beach Camp</h2>
-    <p>LV Beach Camp is a peaceful seaside escape offering native-built kubos and cozy tents. Perfect for families, groups, and couples who want to unwind by the ocean and reconnect with nature.</p>
-  </section>
-
-  <section style="margin-top:20px">
-    <h3 style="font-family:'Merriweather',serif;color:var(--ocean)">Accommodations Preview</h3>
-    <div class="rooms-grid" style="margin-top:12px">
-      <article class="room-card card">
-        <img data-src="assets/bahaykubo.jpg" alt="Bahay Kubo" loading="lazy">
-        <div class="info">
-          <h4 style="font-family:'Merriweather',serif;color:var(--bamboo);margin:6px 0 4px">Bahay Kubo</h4>
-          <p class="small">₱1,200–₱1,450 / night</p>
-        </div>
-      </article>
-
-      <article class="room-card card">
-        <img data-src="assets/rooma.jpg" alt="Room A" loading="lazy">
-        <div class="info">
-          <h4 style="font-family:'Merriweather',serif;color:var(--bamboo);margin:6px 0 4px">Native House A</h4>
-          <p class="small">₱850–₱950 / night</p>
-        </div>
-      </article>
-
-      <article class="room-card card">
-        <img data-src="assets/teepeenew.jpg" alt="Teepee House" loading="lazy">
-        <div class="info">
-          <h4 style="font-family:'Merriweather',serif;color:var(--bamboo);margin:6px 0 4px">Teepee House</h4>
-          <p class="small">₱1,000–₱1,200 / night</p>
-        </div>
-      </article>
-    </div>
-  </section>
-</main>
-
-<div class="floating-book"><a href="booking.html">Book Now</a></div>
-
-<!-- Messenger bubble -->
-<div id="messenger">
-  <div id="msgtip">💬 Chat with us — we’re online!</div>
-  <a id="msglink" href="https://www.facebook.com/lvbeachcamp/" target="_blank" rel="noopener">Messenger</a>
-</div>
-
-<footer class="site-footer">
-  <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-    <div style="display:flex;align-items:center;gap:12px">
-      <img src="assets/logo.jpg" alt="LV logo" style="height:48px;border-radius:8px">
-      <div><strong style="font-family:'Merriweather',serif">LV Beach Camp</strong><div class="small">native comfort by the sea</div></div>
-    </div>
-    <div style="text-align:right">
-      <div>📞 <a href="tel:+639462911866">+63 946 291 1866</a></div>
-      <div style="margin-top:6px">✉️ <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a></div>
-    </div>
-  </div>
-</footer>
-
-<script>
-/* Fade in main content */
-document.addEventListener('DOMContentLoaded', ()=>{
-  requestAnimationFrame(()=> document.getElementById('main').classList.add('visible'));
-  // Lazy-show room images with fade+zoom
-  document.querySelectorAll('.room-card img').forEach(img=>{
-    img.src = img.dataset.src;
-    img.addEventListener('load', ()=> img.classList.add('visible'));
-  });
-});
-
-/* nav link transitions (section fade) */
-document.querySelectorAll('.nav a, .floating-book a, .btn').forEach(el=>{
-  el.addEventListener('click', (e)=>{
-    const href = el.getAttribute('href');
-    if(!href || href.startsWith('http')||href.startsWith('mailto:')||href.startsWith('#')) return;
-    e.preventDefault();
-    document.getElementById('main').classList.remove('visible');
-    setTimeout(()=> window.location = href, 480);
-  });
-});
-
-/* messenger tip behavior */
-setTimeout(()=>{ const tip=document.getElementById('msgtip'); tip.style.display='block'; tip.style.opacity=0; tip.style.transition='opacity .35s'; requestAnimationFrame(()=> tip.style.opacity=1); }, 1200);
-setTimeout(()=>{ const tip=document.getElementById('msgtip'); if(tip){ tip.style.opacity=0; setTimeout(()=> tip.style.display='none',400); } }, 9000);
-</script>
+  <!-- Scripts -->
+  <script src="main.js"></script>
 </body>
 </html>
