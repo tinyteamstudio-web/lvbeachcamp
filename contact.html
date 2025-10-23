@@ -1,90 +1,78 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Contact — LV Beach Camp — Native Comfort by the Sea</title>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="icon" href="assets/logo.jpg" type="image/jpeg">
-<style>
-:root{--gold:#F6B65B;--bamboo:#144d31;--bg:#fffaf5}
-*{box-sizing:border-box}body{font-family:'Poppins',sans-serif;margin:0;background:var(--bg);color:#2f2f2f}
-.site-header{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:rgba(255,255,255,0.95);z-index:90}
-.brand img{height:70px;border-radius:8px}
-.nav{display:flex;gap:16px;color:var(--bamboo);font-weight:600}
-.hero{height:60vh;background-image:url('assets/sunrise.jpg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;position:relative}
-.hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.35);z-index:0}
-.hero-text{position:relative;z-index:2;text-align:center;color:#fff;padding:0 18px}
-.contact-wrap{max-width:1000px;margin:-40px auto 60px;padding:18px;background:rgba(255,255,255,0.96);border-radius:12px;box-shadow:0 10px 26px rgba(0,0,0,0.07);transition:opacity .45s,transform .45s;opacity:0;transform:translateY(8px)}
-.contact-wrap.visible{opacity:1;transform:none}
-.grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
-.box{padding:16px;background:#fff;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-iframe.map{width:100%;height:300px;border:0;border-radius:8px}
-footer{background:linear-gradient(180deg,#8A5A2B,#c66f2b);color:#fff;padding:32px;text-align:center}
-@media(max-width:900px){ .grid{grid-template-columns:1fr} .brand img{height:50px} .hero{height:45vh} }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — LV Beach Camp — Native Comfort by the Sea</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
 </head>
 <body>
-<header class="site-header">
-  <div class="brand"><a href="index.html"><img src="assets/logo.jpg" alt="LV Beach Camp"></a></div>
-  <nav class="nav"><a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="booking.html">Booking</a><a href="gcash.html">Payments</a><a href="contact.html">Contact</a></nav>
-</header>
+  <header class="site-header">
+    <div class="brand"><a href="index.html"><img src="assets/logo.jpg" alt="LV Beach Camp"></a></div>
+    <nav class="nav"><a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="booking.html">Booking</a><a href="gcash.html">Payments</a><a href="contact.html" class="active">Contact</a></nav>
+  </header>
 
-<section class="hero"><div class="hero-text"><h1 style="font-family:'Merriweather',serif;font-size:40px;margin:0">Contact Us</h1><p style="margin:8px 0 0">We’d love to hear from you — bookings, events, or questions.</p></div></section>
-
-<main class="contact-wrap" id="main">
-  <div class="grid">
-    <div>
-      <div class="box">
-        <h3 style="font-family:'Merriweather',serif;color:var(--bamboo);margin-top:0">Get in touch</h3>
-        <p>📍 Purok Santol, Brgy. Ingan, Hinunangan, Southern Leyte</p>
-        <p>📞 <a href="tel:+639462911866">+63 946 291 1866</a></p>
-        <p>✉️ <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a></p>
-        <p>💬 <a href="https://www.facebook.com/lvbeachcamp/" target="_blank" rel="noopener">facebook.com/lvbeachcamp</a></p>
-        <hr style="margin:12px 0">
-        <p style="font-weight:600">Quick Message</p>
-        <form action="mailto:lvbeachcamp@gmail.com" method="post" enctype="text/plain">
-          <label style="display:block;margin-top:8px">Name</label><input name="name" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6">
-          <label style="display:block;margin-top:8px">Email</label><input name="email" type="email" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6">
-          <label style="display:block;margin-top:8px">Message</label><textarea name="message" rows="4" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6"></textarea>
-          <div style="margin-top:10px"><button style="background:linear-gradient(90deg,var(--gold),#f79c3b);color:#fff;padding:10px 14px;border-radius:999px;border:none;font-weight:700">Send Message</button></div>
-        </form>
-      </div>
+  <section class="hero" style="background-image:url('assets/sunrise.jpg');">
+    <div class="hero-inner">
+      <h1 style="font-family:'Merriweather',serif;font-size:40px;margin:0">Contact Us</h1>
+      <p style="margin:8px 0 0;color:#fff">We’d love to hear from you — bookings, events, or questions.</p>
     </div>
+  </section>
 
-    <aside>
-      <div class="box">
-        <h3 style="font-family:'Merriweather',serif;color:var(--bamboo);margin-top:0">Find Us on Map</h3>
-        <iframe class="map" src="https://www.google.com/maps?q=Hinunangan,+Southern+Leyte&output=embed" loading="lazy"></iframe>
-        <p style="font-size:13px;color:#666;margin-top:8px">Open in Google Maps for directions</p>
+  <main class="contact-wrap fade-section" id="main">
+    <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:18px">
+      <div>
+        <div class="card box">
+          <h3 style="font-family:'Merriweather',serif;color:var(--bamboo);margin-top:0">Get in touch</h3>
+          <p>📍 Purok Santol, Brgy. Ingan, Hinunangan, Southern Leyte</p>
+          <p>📞 <a href="tel:+639462911866">+63 946 291 1866</a></p>
+          <p>✉️ <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a></p>
+          <p>💬 <a href="https://www.facebook.com/lvbeachcamp/" target="_blank" rel="noopener">facebook.com/lvbeachcamp</a></p>
+          <hr style="margin:12px 0">
+          <p style="font-weight:600">Quick Message</p>
+          <form action="mailto:lvbeachcamp@gmail.com" method="post" enctype="text/plain">
+            <label style="display:block;margin-top:8px">Name</label><input name="name" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6">
+            <label style="display:block;margin-top:8px">Email</label><input name="email" type="email" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6">
+            <label style="display:block;margin-top:8px">Message</label><textarea name="message" rows="4" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6"></textarea>
+            <div style="margin-top:10px"><button style="background:linear-gradient(90deg,var(--gold),#f79c3b);color:#fff;padding:10px 14px;border-radius:999px;border:none;font-weight:700">Send Message</button></div>
+          </form>
+        </div>
       </div>
-    </aside>
+
+      <aside>
+        <div class="card box">
+          <h3 style="font-family:'Merriweather',serif;color:var(--bamboo);margin-top:0">Find Us on Map</h3>
+          <iframe class="map" src="https://www.google.com/maps?q=Purok+Santol+Brgy+Ingan+Hinunangan+Southern+Leyte&output=embed" loading="lazy" style="width:100%;height:300px;border:0;border-radius:8px"></iframe>
+          <p style="font-size:13px;color:#666;margin-top:8px">Open in Google Maps for directions</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="messenger">
+    <div id="msgtip">💬 Chat with us — we’re online!</div>
+    <a id="msglink" href="https://www.facebook.com/lvbeachcamp/" target="_blank" rel="noopener">Messenger</a>
   </div>
-</main>
 
-<!-- messenger -->
-<div id="messenger" style="position:fixed;right:18px;bottom:18px;z-index:130;display:flex;flex-direction:column;align-items:flex-end;gap:8px">
-  <div id="msgtip" style="display:none;background:rgba(0,0,0,0.85);color:#fff;padding:10px 12px;border-radius:14px;font-weight:600;font-size:14px">💬 Chat with us — we’re online!</div>
-  <a id="msglink" href="https://www.facebook.com/lvbeachcamp/" target="_blank" rel="noopener" style="display:inline-block;background:#144d31;color:#fff;padding:12px 14px;border-radius:999px;box-shadow:0 8px 18px rgba(0,0,0,0.18);text-decoration:none;font-weight:700">Messenger</a>
-</div>
-
-<footer>
-  <p>© 2025 LV Beach Camp | Native Comfort by the Sea</p>
-  <p>📞 +63 946 291 1866 | ✉️ lvbeachcamp@gmail.com</p>
-</footer>
+  <footer class="footer">
+    <p>© 2025 LV Beach Camp | Native Comfort by the Sea</p>
+    <p>📞 +63 946 291 1866 | ✉️ lvbeachcamp@gmail.com</p>
+  </footer>
 
 <script>
-/* fade-in */
-document.addEventListener('DOMContentLoaded', ()=>{ requestAnimationFrame(()=>document.getElementById('main').classList.add('visible')); });
-
-/* nav fade */
-document.querySelectorAll('.nav a').forEach(el=>{
-  el.addEventListener('click',(e)=>{ const href=el.getAttribute('href'); if(!href||href.startsWith('http')||href.startsWith('mailto:')||href.startsWith('#')) return; e.preventDefault(); document.getElementById('main').classList.remove('visible'); setTimeout(()=>window.location=href,420);});
+document.addEventListener('DOMContentLoaded', ()=>{
+  requestAnimationFrame(()=> document.getElementById('main').classList.add('visible'));
+  // nav fade
+  document.querySelectorAll('.nav a').forEach(el=>{
+    el.addEventListener('click',(e)=>{ const href=el.getAttribute('href'); if(!href||href.startsWith('http')||href.startsWith('mailto:')||href.startsWith('#')) return; e.preventDefault(); document.getElementById('main').classList.remove('visible'); setTimeout(()=>window.location=href,420);});
+  });
+  // messenger tip
+  setTimeout(()=>{ const tip=document.getElementById('msgtip'); tip.style.display='block'; tip.style.opacity=0; tip.style.transition='opacity .35s'; requestAnimationFrame(()=>tip.style.opacity=1) },1201);
+  setTimeout(()=>{ const tip=document.getElementById('msgtip'); if(tip){ tip.style.opacity=0; setTimeout(()=>tip.style.display='none',400)} },9000);
 });
-
-/* messenger tip */
-setTimeout(()=>{ const tip=document.getElementById('msgtip'); tip.style.display='block'; tip.style.opacity=0; tip.style.transition='opacity .35s'; requestAnimationFrame(()=>tip.style.opacity=1) },1200);
-setTimeout(()=>{ const tip=document.getElementById('msgtip'); if(tip){ tip.style.opacity=0; setTimeout(()=>tip.style.display='none',400)} },9000);
 </script>
 </body>
 </html>
