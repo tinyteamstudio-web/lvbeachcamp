@@ -1,0 +1,133 @@
+/* style.css - LV Beach Camp (global) */
+:root{
+  --gold:#F6B65B;
+  --bamboo:#144d31;
+  --ocean:#2F4930;
+  --cream:#fffaf5;
+  --fade-duration: 2s;
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background:var(--cream);
+  color:#2f2f2f;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* Header / Nav */
+.site-header{
+  position:fixed;
+  top:0; left:0; right:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 18px;
+  background:rgba(255,255,255,0.95);
+  z-index:120;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+.brand img{height:64px;border-radius:8px}
+.nav{display:flex;gap:16px;align-items:center;font-weight:600}
+.nav a{
+  text-decoration:none;
+  color:var(--bamboo);
+  padding:8px 10px;
+  border-radius:8px;
+}
+.nav a:hover{background:rgba(20,77,49,0.06)}
+.nav a.active{background:linear-gradient(90deg, rgba(20,77,49,0.08), rgba(246,182,91,0.06));box-shadow: inset 0 -2px 0 rgba(246,182,91,0.06);}
+
+/* Hero (global) */
+.hero{
+  height:62vh;
+  min-height:360px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  padding:24px;
+  background-image:url('assets/sunrise.jpg');
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.22) 0%, rgba(244,234,215,0.14) 60%);
+  z-index:0;
+}
+.hero-inner{position:relative;z-index:2;text-align:center;color:#fff;max-width:980px;padding:0 14px}
+.hero h1{font-family:'Merriweather',serif;font-size:44px;margin:0 0 8px;line-height:1.02;text-shadow:0 8px 28px rgba(0,0,0,0.25)}
+.hero p{margin:0 0 16px;font-size:18px}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  background:linear-gradient(90deg,var(--gold),#f79c3b);
+  color:#fff;
+  padding:12px 20px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 10px 28px rgba(246,182,91,0.18);
+}
+
+/* Main content container that fades (section-only fade) */
+.container{
+  max-width:1100px;
+  margin:26px auto;
+  padding:18px;
+  transition: opacity var(--fade-duration) ease, transform var(--fade-duration) ease;
+  opacity:0; transform:translateY(10px);
+}
+.container.visible{opacity:1; transform:none}
+
+/* Cards / grids */
+.card{background:#fff;padding:14px;border-radius:12px;box-shadow:0 8px 26px rgba(0,0,0,0.06)}
+.rooms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.room-card img{width:100%;height:180px;object-fit:cover;border-radius:10px;display:block;transition:transform .9s ease,opacity .9s ease;opacity:0;transform:scale(1.03)}
+.room-card img.visible{opacity:1;transform:scale(1)}
+.room-card .info{padding:10px 6px}
+
+/* Gallery effect: fade + zoom */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.08);transition:transform .9s ease,opacity .9s ease;opacity:0;transform:scale(1.03)}
+.gallery-grid img.visible{opacity:1;transform:scale(1)}
+.gallery-grid img:hover{transform:scale(1.04)}
+
+/* Payment cards */
+.payment-cards{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+.payment-card{background:#fff;padding:14px;border-radius:12px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.06);width:calc(25% - 12px)}
+.payment-card img{width:130px;height:130px;object-fit:contain;border-radius:8px}
+
+/* Form styles in gcash and contact */
+input,textarea,select{font-family:inherit;border:1px solid #e6e6e6;padding:10px;border-radius:8px}
+.submit{background:linear-gradient(90deg,var(--gold),#f79c3b);color:#fff;padding:12px 16px;border-radius:999px;border:none;font-weight:700;cursor:pointer}
+
+/* Floating Book Now */
+.floating-book{position:fixed;right:18px;bottom:18px;z-index:140}
+.floating-book a{display:inline-block;padding:12px 16px;border-radius:999px;background:linear-gradient(90deg,var(--gold),#f79c3b);color:#fff;font-weight:700;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,0.12)}
+
+/* Messenger bubble & tip */
+#messenger{position:fixed;right:18px;bottom:88px;z-index:150;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+#msgtip{display:none;background:rgba(0,0,0,0.85);color:#fff;padding:10px 12px;border-radius:14px;font-weight:600;font-size:14px}
+#msglink{display:inline-block;background:#144d31;color:#fff;padding:12px 14px;border-radius:999px;box-shadow:0 8px 18px rgba(0,0,0,0.18);text-decoration:none;font-weight:700}
+
+/* Footer */
+.site-footer{background:linear-gradient(180deg,#8A5A2B,#c66f2b);color:#fff;padding:28px 18px;text-align:center;margin-top:30px}
+.site-footer a{color:#fff;text-decoration:underline}
+
+/* Responsive tweaks */
+@media(max-width:920px){ .brand img{height:56px} .hero h1{font-size:34px} .hero{height:52vh} .payment-card{width:48%} }
+@media(max-width:560px){ .nav{gap:8px} .brand img{height:48px} .hero{height:46vh} .payment-card{width:100%} .floating-book{right:12px;bottom:12px} #messenger{right:12px;bottom:72px} }
+
+/* utility */
+.center{text-align:center}
+.small{font-size:14px;color:#666}
