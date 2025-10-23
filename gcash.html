@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Options | LV Beach Camp</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom right, #b3ecff, #fffbe6);
+      margin: 0;
+      color: #333;
+    }
+
+    header {
+      background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      border-bottom-left-radius: 50% 15%;
+      border-bottom-right-radius: 50% 15%;
+    }
+
+    header h1 {
+      position: relative;
+      font-family: "Pacifico", cursive;
+      font-size: 2.5em;
+      z-index: 1;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: -60px auto 80px;
+      background: #ffffffd9;
+      padding: 35px 45px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(8px);
+    }
+
+    h2 {
+      text-align: center;
+      color: #007b83;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0, 150, 136, 0.3);
+    }
+
+    .card img {
+      width: 180px;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin-top: 15px;
+      color: #007b83;
+    }
+
+    .note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #555;
+      padding-bottom: 20px;
+    }
+
+    footer a {
+      color: #007b83;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .back-btn {
+      display: block;
+      width: 200px;
+      margin: 40px auto 0;
+      background: linear-gradient(to right, #00a8a8, #00c8b8);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(to right, #009088, #00b3a3);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 150, 136, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>LV Beach Camp</h1>
+  </header>
+
+  <div class="container">
+    <h2>💳 Choose Your Payment Method</h2>
+
+    <div class="grid">
+      <div class="card">
+        <img src="1.png" alt="GCash QR">
+        <h3>GCash</h3>
+        <p class="note">Scan QR to pay using GCash.<br>Send proof via Messenger or Email.</p>
+      </div>
+
+      <div class="card">
+        <img src="2.png" alt="Maya QR">
+        <h3>Maya (PayMaya)</h3>
+        <p class="note">Scan QR to pay using Maya.<br>Send proof via Messenger or Email.</p>
+      </div>
+
+      <div class="card">
+        <img src="3.png" alt="BDO QR">
+        <h3>BDO Bank</h3>
+        <p class="note">Scan QR to transfer to BDO.<br>Send proof via Messenger or Email.</p>
+      </div>
+
+      <div class="card">
+        <img src="4.png" alt="PNB QR">
+        <h3>PNB Bank</h3>
+        <p class="note">Scan QR to transfer to PNB.<br>Send proof via Messenger or Email.</p>
+      </div>
+    </div>
+
+    <a class="back-btn" href="booking.html">⬅ Back to Booking</a>
+  </div>
+
+  <footer>
+    © <span id="year"></span> LV Beach Camp |
+    <a href="index.html">Back to Home</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
