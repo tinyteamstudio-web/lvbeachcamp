@@ -387,3 +387,36 @@ summary{
   width: 100%;
   max-width: 420px;
 }
+/* ===== Compact Payment Form ===== */
+.form-card{
+  max-width: 520px;          /* controls size */
+  margin: 0 auto;            /* centers it */
+  padding: 18px 20px;
+}
+
+/* Tighter form spacing */
+.form-card label{
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-card input,
+.form-card select{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.15);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Reduce vertical gaps */
+.form-card label + label{
+  margin-top: 10px;
+}
+
+/* Submit button not too tall */
+.form-card button{
+  padding: 12px 16px;
+  font-size: 15px;
+}
