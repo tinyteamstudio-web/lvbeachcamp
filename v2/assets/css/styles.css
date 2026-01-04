@@ -181,3 +181,24 @@ body.dark .site-header{background:linear-gradient(180deg, rgba(3,6,6,0.6), rgba(
 body.dark .nav-menu a{color:#d6fff3}
 body.dark .card, body.dark .booking-form, body.dark .payment-info{background:rgba(255,255,255,0.03);box-shadow:none;border:1px solid rgba(255,255,255,0.03)}
 body.dark .site-footer{background:linear-gradient(180deg,#01120f,#02231d)}
+
+/* --- Micro agency footer (separate from LV Beach Camp footer) --- */
+.agency-footer{
+  border-top: 1px solid rgba(0,0,0,.08);
+  background: rgba(0,0,0,.03);
+  padding: 10px 0;
+}
+.dark .agency-footer{
+  border-top: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.05);
+}
+.agency-footer p{
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  opacity: .9;
+}
+.agency-footer .mini-ad{
+  opacity: .9;
+}
