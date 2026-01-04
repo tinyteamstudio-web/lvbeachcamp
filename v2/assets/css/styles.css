@@ -420,3 +420,21 @@ body.dark .agency-footer{
   pointer-events:none;
 }
 .messenger:hover .tooltip{ opacity:1; transform: translateX(0); }
+
+/* emergency image normalization */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+img[src*="jpg"],
+img[src*="png"] {
+  display: block;
+  margin: 0 auto;
+}
+
+section img {
+  max-height: 260px;
+  object-fit: cover;
+}
+
