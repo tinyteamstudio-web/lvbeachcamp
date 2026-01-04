@@ -5,16 +5,18 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Payments — LV Beach Camp</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="../assets/images/logo.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/logo.jpg" type="image/jpeg">
+
+  <!-- ✅ Your repo has styles.css in ROOT -->
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="nav-inner">
     <a class="brand" href="../index.html" aria-label="LV Beach Camp home">
-      <img src="../assets/images/logo.jpg" alt="LV Beach Camp logo" class="logo" />
+      <img src="../assets/logo.jpg" alt="LV Beach Camp logo" class="logo" />
       <span class="brand-text">LV Beach Camp</span>
     </a>
 
@@ -30,10 +32,10 @@
 </header>
 
 <section class="hero" aria-label="Payments hero">
-  <div class="hero-bg" role="img" aria-hidden="true"></div>
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-overlay">
     <h1 class="hero-title">Payments & Proof Upload</h1>
-    <p class="hero-sub">Step 1: Pay via QR. Step 2: Upload proof to confirm your booking.</p>
+    <p class="hero-sub">Step 1: Scan to pay. Step 2: Upload proof to confirm your booking.</p>
     <div class="hero-cta">
       <a href="#qrs" class="btn btn-primary">Show QR Codes</a>
       <a href="#upload" class="btn btn-ghost">Upload Proof</a>
@@ -43,28 +45,29 @@
 
 <main class="container narrow" role="main" style="padding-top:18px;padding-bottom:30px">
 
+  <!-- STEP 1 -->
   <div class="card" id="qrs" style="padding:18px">
-    <h2 style="margin-top:0">Step 1 — Scan to Pay</h2>
+    <h2 style="margin-top:0;font-family:'Merriweather',serif">Step 1 — Scan to Pay</h2>
     <p class="muted">Choose your payment option below. (Names are hidden for privacy.)</p>
 
-    <div class="payment-cards" style="margin-top:12px">
-      <div class="payment-card">
-        <img src="../assets/images/qr-gcash.png" alt="GCash QR code">
+    <div class="payment-cards" style="margin-top:12px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+      <div class="payment-card card" style="padding:12px;text-align:center">
+        <img src="../assets/qr-gcash.png" alt="GCash QR code" style="width:100%;max-width:320px;margin:0 auto;border-radius:14px">
         <p style="margin:10px 0 0"><strong>GCash</strong></p>
       </div>
 
-      <div class="payment-card">
-        <img src="../assets/images/qr-paymaya.png" alt="PayMaya QR code">
+      <div class="payment-card card" style="padding:12px;text-align:center">
+        <img src="../assets/qr-paymaya.png" alt="PayMaya QR code" style="width:100%;max-width:320px;margin:0 auto;border-radius:14px">
         <p style="margin:10px 0 0"><strong>PayMaya</strong></p>
       </div>
 
-      <div class="payment-card">
-        <img src="../assets/images/qr-bdo.png" alt="BDO QR code">
+      <div class="payment-card card" style="padding:12px;text-align:center">
+        <img src="../assets/qr-bdo.png" alt="BDO QR code" style="width:100%;max-width:320px;margin:0 auto;border-radius:14px">
         <p style="margin:10px 0 0"><strong>BDO</strong></p>
       </div>
 
-      <div class="payment-card">
-        <img src="../assets/images/qr-pnb.png" alt="PNB QR code">
+      <div class="payment-card card" style="padding:12px;text-align:center">
+        <img src="../assets/qr-pnb.png" alt="PNB QR code" style="width:100%;max-width:320px;margin:0 auto;border-radius:14px">
         <p style="margin:10px 0 0"><strong>PNB</strong></p>
       </div>
     </div>
@@ -75,8 +78,9 @@
     </div>
   </div>
 
+  <!-- STEP 2 -->
   <div class="card" id="upload" style="padding:18px;margin-top:14px">
-    <h2 style="margin-top:0">Step 2 — Upload Payment Proof</h2>
+    <h2 style="margin-top:0;font-family:'Merriweather',serif">Step 2 — Upload Payment Proof</h2>
     <p class="muted">After uploading, we’ll verify and confirm your booking.</p>
 
     <form id="paymentForm"
@@ -119,7 +123,7 @@
       <textarea name="message" rows="4" placeholder="Any notes (time paid, reference no., etc.)"></textarea>
 
       <div style="text-align:center;margin-top:12px">
-        <button type="submit" class="submit">Submit Payment Proof</button>
+        <button type="submit" class="btn btn-primary" style="border:0">Submit Payment Proof</button>
       </div>
 
       <div id="thank" style="display:none;text-align:center;margin-top:12px;padding:12px;background:rgba(14,107,95,.08);border-radius:14px">
@@ -138,32 +142,32 @@
 
 </main>
 
+<!-- 🌴 LV BEACH CAMP FOOTER (guest-facing only) -->
 <footer class="site-footer">
   <div class="container footer-inner">
-    <div style="display:flex;align-items:center;gap:10px">
-      <img src="../assets/images/logo.jpg" alt="LV Beach Camp logo" class="footer-logo" />
-      <p style="margin:0">© <span id="year"></span> LV Beach Camp</p>
-    </div>
-
+    <p style="margin:0">© <span id="year"></span> LV Beach Camp</p>
     <p style="margin:0">
       📞 <a href="tel:+639462911866">+63 946 291 1866</a> ·
-      ✉️ <a href="mailto:chinveloso.consmaterial@gmail.com">chinveloso.consmaterial@gmail.com</a> ·
+      ✉️ <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a> ·
       💬 <a href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">Message on Messenger</a>
     </p>
   </div>
 </footer>
 
+<!-- 🛠️ AGENCY MICRO-FOOTER (separate + subtle) -->
 <footer class="agency-footer">
   <div class="container">
     <p>
-      Built by
-      <a href="https://www.facebook.com/svpfunnels" target="_blank" rel="noopener"><strong>SVP Funnels &amp; Digital Builder</strong></a>
+      <strong>Powered by</strong>
+      <a href="https://www.facebook.com/svpfunnels" target="_blank" rel="noopener">SVP Funnels</a>
       ×
-      <a href="https://www.facebook.com/profile.php?id=61585335397502" target="_blank" rel="noopener"><strong>TinyTeam Digital Studio</strong></a>
-      <br/>
-      <span class="mini-ad">Want a booking system, payment flow, or funnel like this for your business? Let’s build it together.</span>
-      <br/>
-      <span class="mini-ad">Support: <a href="mailto:smallsteps@tinyteamstudio.online">smallsteps@tinyteamstudio.online</a></span>
+      <a href="https://www.facebook.com/profile.php?id=61585335397502" target="_blank" rel="noopener">TinyTeam Digital Studio</a><br>
+      <span class="mini-ad">Booking systems &amp; websites for small businesses</span><br>
+      <span class="mini-ad">
+        📧 <a href="mailto:chinveloso.consmaterials@gmail.com">chinveloso.consmaterials@gmail.com</a>
+        ·
+        📧 <a href="mailto:smallsteps@tinyteam.online">smallsteps@tinyteam.online</a>
+      </span>
     </p>
   </div>
 </footer>
@@ -175,6 +179,7 @@
   </svg>
 </a>
 
-<script src="../assets/js/main.js"></script>
+<!-- ✅ Your repo has main.js in ROOT -->
+<script src="../main.js"></script>
 </body>
 </html>
