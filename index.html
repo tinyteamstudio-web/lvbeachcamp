@@ -6,21 +6,20 @@
   <title>LV Beach Camp — Sunrise • Sea • Serenity</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
-
-  <!-- ✅ Your repo has styles.css in ROOT -->
+  <link rel="icon" href="assets/images/logo.jpg" type="image/jpeg">
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
 <header class="site-header">
   <div class="nav-inner">
-    <a class="brand" href="index.html">
-      <img src="assets/logo.jpg" class="logo" alt="LV Beach Camp logo">
+    <a class="brand" href="#home" aria-label="LV Beach Camp home">
+      <img src="assets/images/logo.jpg" class="logo" alt="LV Beach Camp logo">
       <span class="brand-text">LV Beach Camp</span>
     </a>
 
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Main navigation">
       <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
         <span class="hamburger"></span>
       </button>
@@ -30,7 +29,7 @@
         <li><a class="nav-link" href="#packages">Packages</a></li>
         <li><a class="nav-link" href="#gallery">Gallery</a></li>
         <li><a class="nav-link" href="pages/booking.html">Booking</a></li>
-        <li><a class="nav-link" href="pages/payment.html">Payments</a></li>
+        <li><a class="nav-link" href="pages/payment.html#qrs">Payments</a></li>
         <li><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
 
@@ -39,131 +38,144 @@
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-overlay">
-    <h1 class="hero-title">Sunrise • Sea • Serenity</h1>
-    <p class="hero-sub">Earthy beach comfort, calm nights, and island mornings worth waking up for.</p>
-    <div class="hero-cta">
-      <a href="pages/booking.html" class="btn btn-primary">Book a Stay</a>
-      <a href="#packages" class="btn btn-ghost">View Packages</a>
+<main>
+  <!-- HERO -->
+  <section id="home" class="hero" aria-label="Sunrise hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay">
+      <h1 class="hero-title">Sunrise • Sea • Serenity</h1>
+      <p class="hero-sub">Earthy beach comfort, calm nights, and island mornings worth waking up for.</p>
+      <div class="hero-cta">
+        <a href="pages/booking.html" class="btn btn-primary">Book a Stay</a>
+        <a href="#packages" class="btn btn-ghost">View Packages</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="about" class="content-section">
-  <div class="container narrow">
-    <h2>About LV Beach Camp</h2>
-    <p class="muted">
-      LV Beach Camp is a peaceful beachfront escape — kubo stays, tents, and simple island comfort.
-      If you’re looking for a calm beach vibe with sunrise mornings and full-moon nights, you’ll love it here.
-    </p>
-  </div>
-</section>
-
-<section id="packages" class="content-section section-tint">
-  <div class="container">
-    <h2>Packages</h2>
-
-    <div class="cards-grid">
-      <article class="card">
-        <img src="assets/bahaykubo.jpg" alt="Bahay Kubo stay">
-        <h3>Bahay Kubo Stay</h3>
-        <p>Cozy kubo by the sea — grounded, breezy, and relaxing.</p>
-        <p class="price">Message us for rates</p>
-      </article>
-
-      <article class="card">
-        <img src="assets/mediumcampingtent.jpg" alt="Camping tent stay">
-        <h3>Camping / Tent Stay</h3>
-        <p>Bring your own tent or rent one — beachside comfort.</p>
-        <p class="price">Message us for rates</p>
-      </article>
-
-      <article class="card">
-        <img src="assets/gazebotents.jpg" alt="Gazebo tents">
-        <h3>Gazebo / Cottage Space</h3>
-        <p>Perfect for groups, chill sessions, and seaside bonding.</p>
-        <p class="price">Message us for rates</p>
-      </article>
+  <!-- ABOUT -->
+  <section id="about" class="content-section">
+    <div class="container narrow">
+      <h2>About LV Beach Camp</h2>
+      <p class="muted">
+        LV Beach Camp is a peaceful beachfront escape — kubo stays, tents, and simple island comfort.
+        If you’re looking for a calm beach vibe with sunrise mornings and full-moon nights, you’ll love it here.
+      </p>
     </div>
+  </section>
 
-    <div class="center-actions">
-      <a class="btn btn-primary" href="pages/booking.html">Book Now</a>
-      <a class="btn btn-ghost" href="pages/payment.html#qrs">View Payment QR Codes</a>
+  <!-- PACKAGES -->
+  <section id="packages" class="content-section section-tint">
+    <div class="container">
+      <h2>Packages</h2>
+
+      <div class="cards-grid">
+        <article class="card">
+          <img src="assets/images/bahaykubo.jpg" alt="Bahay Kubo stay">
+          <h3>Bahay Kubo Stay</h3>
+          <p>Cozy kubo by the sea — grounded, breezy, and relaxing.</p>
+          <p class="price">Message us for rates</p>
+        </article>
+
+        <article class="card">
+          <img src="assets/images/mediumcampingtent.jpg" alt="Camping tent stay">
+          <h3>Camping / Tent Stay</h3>
+          <p>Bring your own tent or rent one — beachside comfort.</p>
+          <p class="price">Message us for rates</p>
+        </article>
+
+        <article class="card">
+          <img src="assets/images/gazebotents.jpg" alt="Gazebo tents">
+          <h3>Gazebo / Cottage Space</h3>
+          <p>Perfect for groups, chill sessions, and seaside bonding.</p>
+          <p class="price">Message us for rates</p>
+        </article>
+      </div>
+
+      <div class="center-actions">
+        <a class="btn btn-primary" href="pages/booking.html">Book Now</a>
+        <a class="btn btn-ghost" href="pages/payment.html#qrs">View Payment QR Codes</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="gallery" class="content-section">
-  <div class="container">
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-      <img src="assets/sunrise.jpg" alt="Sunrise view">
-      <img src="assets/beachfront.jpg" alt="Beachfront view">
-      <img src="assets/rooma.jpg" alt="Room area">
-      <img src="assets/teepee.jpg" alt="Teepee tent">
-      <img src="assets/umbrella.jpg" alt="Umbrella area">
-      <img src="assets/banner.jpg" alt="Camp banner">
+  <!-- GALLERY -->
+  <section id="gallery" class="content-section">
+    <div class="container">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <img src="assets/images/sunrise.jpg" alt="Sunrise view">
+        <img src="assets/images/beachfront.jpg" alt="Beachfront view">
+        <img src="assets/images/rooma.jpg" alt="Room area">
+        <img src="assets/images/teepee.jpg" alt="Teepee tent">
+        <img src="assets/images/umbrella.jpg" alt="Umbrella area">
+        <img src="assets/images/banner.jpg" alt="Camp banner">
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact" class="content-section section-tint">
-  <div class="container narrow">
-    <h2>Contact</h2>
+  <!-- CONTACT -->
+  <section id="contact" class="content-section section-tint">
+    <div class="container narrow">
+      <h2>Contact</h2>
 
-    <ul class="contact-list">
-      <li><strong>Phone:</strong> <a href="tel:+639462911866">+63 946 291 1866</a></li>
-      <li><strong>Email:</strong> <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a></li>
-      <li><strong>Messenger:</strong> <a href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">m.me/lvbeachcamp</a></li>
-    </ul>
+      <ul class="contact-list">
+        <li><strong>Phone:</strong> <a href="tel:+639462911866">+63 946 291 1866</a></li>
+        <li><strong>Email:</strong> <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a></li>
+        <li><strong>Messenger:</strong> <a href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">m.me/lvbeachcamp</a></li>
+      </ul>
 
-    <div class="center-actions">
-      <a class="btn btn-primary" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">
-        Message on Messenger
-      </a>
+      <div class="center-actions">
+        <a class="btn btn-primary" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">
+          Message on Messenger
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <!-- 🌴 LV BEACH CAMP FOOTER (guest-facing only) -->
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p style="margin:0">© <span id="year"></span> LV Beach Camp</p>
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="assets/images/logo.jpg" alt="LV Beach Camp logo" class="footer-logo" />
+      <p style="margin:0">© <span id="year"></span> LV Beach Camp</p>
+    </div>
+
     <p style="margin:0">
-      💬 <a href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">Messenger</a>
+      📞 <a href="tel:+639462911866">+63 946 291 1866</a> ·
+      ✉️ <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a> ·
+      💬 <a href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">Message on Messenger</a>
     </p>
   </div>
 </footer>
 
-<!-- 🛠️ AGENCY MICRO-FOOTER (separate + subtle, your compensation links) -->
+<!-- ⭐ AGENCY FOOTER (separate strip) -->
 <footer class="agency-footer">
   <div class="container">
     <p>
-      <strong>Powered by</strong>
-      <a href="https://www.facebook.com/svpfunnels" target="_blank" rel="noopener">SVP Funnels</a>
+      Powered by
+      <a href="https://www.facebook.com/svpfunnels" target="_blank" rel="noopener"><strong>SVP Funnels &amp; Digital Builder</strong></a>
       ×
-      <a href="https://www.facebook.com/profile.php?id=61585335397502" target="_blank" rel="noopener">TinyTeam Digital Studio</a><br>
-      <span class="mini-ad">Booking systems &amp; websites for small businesses</span><br>
+      <a href="https://www.facebook.com/profile.php?id=61585335397502" target="_blank" rel="noopener"><strong>TinyTeam Digital Studio</strong></a>
+      <br/>
+      <span class="mini-ad">Want a booking system + payment flow like this for your business? Let’s build it — we’re a 2-man agency.</span>
+      <br/>
       <span class="mini-ad">
-        📧 <a href="mailto:chinveloso.consmaterials@gmail.com">chinveloso.consmaterials@gmail.com</a>
-        ·
-        📧 <a href="mailto:smallsteps@tinyteam.online">smallsteps@tinyteam.online</a>
+        SVP: <a href="mailto:chinveloso.consmaterials@gmail.com">chinveloso.consmaterials@gmail.com</a> ·
+        TinyTeam: <a href="mailto:smallsteps@tinyteam.online">smallsteps@tinyteam.online</a>
       </span>
     </p>
   </div>
 </footer>
 
-<!-- Floating Messenger -->
-<a class="messenger" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener" aria-label="Chat on Messenger">
-  <span class="tooltip">💬 Chat with us</span>
-  <svg class="messenger-icon" viewBox="0 0 24 24" aria-hidden="true">
-    <path fill="currentColor" d="M12 2C6.48 2 2 6.1 2 11.16c0 2.88 1.46 5.43 3.74 7.1V22l3.57-1.97c.86.24 1.77.37 2.69.37 5.52 0 10-4.1 10-9.24S17.52 2 12 2zm.99 12.44-2.55-2.73-4.98 2.73 5.45-5.79 2.55 2.73 4.98-2.73-5.45 5.79z"/>
+<!-- Floating Messenger (LV Beach Camp direct) -->
+<a id="messenger-bubble" class="messenger" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener" aria-label="Message us on Messenger">
+  <span class="tooltip">Message us on Messenger!</span>
+  <svg viewBox="0 0 24 24" class="messenger-icon" aria-hidden="true">
+    <path d="M12 2C6.48 2 2 5.92 2 10.5c0 2.86 1.72 5.41 4.43 7.02L6 22l4.01-2.13c.8.22 1.64.35 2.49.35 5.52 0 10-3.92 10-8.5S17.52 2 12 2zM11 14l-3.5-4 4.5 1.5L16 8l-5 6z" fill="currentColor"/>
   </svg>
 </a>
 
-<!-- ✅ Your repo has main.js in ROOT -->
 <script src="main.js"></script>
 </body>
 </html>
