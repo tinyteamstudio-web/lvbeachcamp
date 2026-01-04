@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Booking — LV Beach Camp</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="../assets/logo.jpg" type="image/jpeg">
-
-  <!-- ✅ Your repo has styles.css in ROOT -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/images/logo.jpg" type="image/jpeg">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -16,7 +14,7 @@
 <header class="site-header">
   <div class="nav-inner">
     <a class="brand" href="../index.html" aria-label="LV Beach Camp home">
-      <img src="../assets/logo.jpg" alt="LV Beach Camp logo" class="logo" />
+      <img src="../assets/images/logo.jpg" alt="LV Beach Camp logo" class="logo" />
       <span class="brand-text">LV Beach Camp</span>
     </a>
 
@@ -32,7 +30,7 @@
 </header>
 
 <section class="hero" aria-label="Booking hero">
-  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-bg" role="img" aria-hidden="true"></div>
   <div class="hero-overlay">
     <h1 class="hero-title">Book Your Island Stay</h1>
     <p class="hero-sub">Fill out the booking form, then upload your payment proof to confirm.</p>
@@ -46,31 +44,28 @@
 <main class="container narrow" role="main" style="padding-top:18px;padding-bottom:30px">
   <div class="card" style="padding:18px">
     <h2 style="margin-top:0;font-family:'Merriweather',serif">Booking Form</h2>
-    <p class="muted">
-      After submitting, proceed to the Payments page to upload proof and confirm your booking.
-    </p>
+    <p class="muted">After submitting, proceed to Payments to upload proof and confirm your booking.</p>
 
     <div class="map-embed" style="margin-top:12px">
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLScYrfwtprlgI2U5KllRZgoxu7Kx6jodjMcOz1MhRSvqQgT5qQ/viewform?embedded=true"
-        width="100%" height="920" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">
-        Loading…
-      </iframe>
+        width="100%" height="920" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Loading…</iframe>
     </div>
 
     <div style="text-align:center;margin-top:14px">
       <a class="btn btn-primary" href="payment.html#upload">Upload Payment Proof</a>
-      <a class="btn btn-ghost" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener" style="margin-left:8px">
-        Message Support
-      </a>
+      <a class="btn btn-ghost" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener" style="margin-left:8px">Message Support</a>
     </div>
   </div>
 </main>
 
-<!-- 🌴 LV BEACH CAMP FOOTER (guest-facing only) -->
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p style="margin:0">© <span id="year"></span> LV Beach Camp</p>
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="../assets/images/logo.jpg" alt="LV Beach Camp logo" class="footer-logo" />
+      <p style="margin:0">© <span id="year"></span> LV Beach Camp</p>
+    </div>
+
     <p style="margin:0">
       📞 <a href="tel:+639462911866">+63 946 291 1866</a> ·
       ✉️ <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a> ·
@@ -79,19 +74,19 @@
   </div>
 </footer>
 
-<!-- 🛠️ AGENCY MICRO-FOOTER (separate + subtle) -->
 <footer class="agency-footer">
   <div class="container">
     <p>
-      <strong>Powered by</strong>
-      <a href="https://www.facebook.com/svpfunnels" target="_blank" rel="noopener">SVP Funnels</a>
+      Powered by
+      <a href="https://www.facebook.com/svpfunnels" target="_blank" rel="noopener"><strong>SVP Funnels &amp; Digital Builder</strong></a>
       ×
-      <a href="https://www.facebook.com/profile.php?id=61585335397502" target="_blank" rel="noopener">TinyTeam Digital Studio</a><br>
-      <span class="mini-ad">Booking systems &amp; websites for small businesses</span><br>
+      <a href="https://www.facebook.com/profile.php?id=61585335397502" target="_blank" rel="noopener"><strong>TinyTeam Digital Studio</strong></a>
+      <br/>
+      <span class="mini-ad">Want a booking system + payment flow like this for your business? Let’s build it — we’re a 2-man agency.</span>
+      <br/>
       <span class="mini-ad">
-        📧 <a href="mailto:chinveloso.consmaterials@gmail.com">chinveloso.consmaterials@gmail.com</a>
-        ·
-        📧 <a href="mailto:smallsteps@tinyteam.online">smallsteps@tinyteam.online</a>
+        SVP: <a href="mailto:chinveloso.consmaterials@gmail.com">chinveloso.consmaterials@gmail.com</a> ·
+        TinyTeam: <a href="mailto:smallsteps@tinyteam.online">smallsteps@tinyteam.online</a>
       </span>
     </p>
   </div>
@@ -104,7 +99,6 @@
   </svg>
 </a>
 
-<!-- ✅ Your repo has main.js in ROOT -->
 <script src="../main.js"></script>
 </body>
 </html>
