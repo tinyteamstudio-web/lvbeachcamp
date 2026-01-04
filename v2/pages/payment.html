@@ -22,7 +22,7 @@
       <ul class="nav-menu" style="display:flex;gap:14px;list-style:none;margin:0;padding:0">
         <li><a class="nav-link" href="../index.html">Home</a></li>
         <li><a class="nav-link" href="booking.html">Booking</a></li>
-        <li><a class="nav-link" href="payment.html">Payments</a></li>
+        <li><a class="nav-link" href="payment.html#qrs">Payments</a></li>
         <li><a class="nav-link" href="../index.html#contact">Contact</a></li>
       </ul>
     </nav>
@@ -33,19 +33,19 @@
   <div class="hero-bg" role="img" aria-hidden="true"></div>
   <div class="hero-overlay">
     <h1 class="hero-title">Payments & Proof Upload</h1>
-    <p class="hero-sub">Choose a payment option below, then upload your proof to confirm your booking.</p>
+    <p class="hero-sub">Step 1: Pay via QR. Step 2: Upload proof to confirm your booking.</p>
     <div class="hero-cta">
-      <a href="booking.html" class="btn btn-ghost">Back to Booking</a>
-      <a href="https://m.me/lvbeachcamp" class="btn btn-primary" target="_blank" rel="noopener">Message Support</a>
+      <a href="#qrs" class="btn btn-primary">Show QR Codes</a>
+      <a href="#upload" class="btn btn-ghost">Upload Proof</a>
     </div>
   </div>
 </section>
 
-<main class="container narrow" role="main" style="padding-top:18px">
+<main class="container narrow" role="main" style="padding-top:18px;padding-bottom:30px">
 
-  <div class="card" style="padding:18px">
-    <h2 style="margin-top:0">Payment Options</h2>
-    <p class="muted">Scan your preferred QR code to pay. (Names are hidden for privacy.)</p>
+  <div class="card" id="qrs" style="padding:18px">
+    <h2 style="margin-top:0">Step 1 — Scan to Pay</h2>
+    <p class="muted">Choose your payment option below. (Names are hidden for privacy.)</p>
 
     <div class="payment-cards" style="margin-top:12px">
       <div class="payment-card">
@@ -68,11 +68,16 @@
         <p style="margin:10px 0 0"><strong>PNB</strong></p>
       </div>
     </div>
+
+    <div style="text-align:center;margin-top:14px">
+      <a class="btn btn-primary" href="#upload">Next: Upload Proof</a>
+      <a class="btn btn-ghost" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener" style="margin-left:8px">Message Support</a>
+    </div>
   </div>
 
-  <div class="card" style="padding:18px;margin-top:14px">
-    <h2 style="margin-top:0">Upload Payment Proof</h2>
-    <p class="muted">After paying, submit your screenshot below. We’ll verify and confirm your booking.</p>
+  <div class="card" id="upload" style="padding:18px;margin-top:14px">
+    <h2 style="margin-top:0">Step 2 — Upload Payment Proof</h2>
+    <p class="muted">After uploading, we’ll verify and confirm your booking.</p>
 
     <form id="paymentForm"
       action="https://script.google.com/macros/s/AKfycbzGqwndckPE7RBkPo3CuxynoAmxrH5v8wKZI4Zut2jmzgmczDkhepUr_uPWLUePLpK0/exec"
@@ -111,13 +116,13 @@
       <input name="screenshot" type="file" accept="image/*,application/pdf" required>
 
       <label style="display:block;margin-top:12px">Message (optional)</label>
-      <textarea name="message" rows="4" placeholder="Any notes we should know (time paid, reference no., etc.)"></textarea>
+      <textarea name="message" rows="4" placeholder="Any notes (time paid, reference no., etc.)"></textarea>
 
       <div style="text-align:center;margin-top:12px">
         <button type="submit" class="submit">Submit Payment Proof</button>
       </div>
 
-      <div id="thank" style="display:none;text-align:center;margin-top:12px;padding:10px;background:#f4f4f4;border-radius:10px">
+      <div id="thank" style="display:none;text-align:center;margin-top:12px;padding:12px;background:rgba(14,107,95,.08);border-radius:14px">
         ✅ Thank you — your proof was submitted. We’ll verify and confirm shortly.
         <div style="margin-top:10px">
           <a class="btn btn-primary" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">Message Support</a>
@@ -135,18 +140,16 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <div class="footer-left">
+    <div style="display:flex;align-items:center;gap:10px">
       <img src="../assets/images/logo.jpg" alt="LV Beach Camp logo" class="footer-logo" />
-      <p>© <span id="year"></span> LV Beach Camp — All rights reserved.</p>
+      <p style="margin:0">© <span id="year"></span> LV Beach Camp</p>
     </div>
 
-    <div class="footer-right">
-      <p>
-        📞 <a href="tel:+639462911866">+63 946 291 1866</a> ·
-        ✉️ <a href="mailto:chinveloso.consmaterial@gmail.com">chinveloso.consmaterial@gmail.com</a> ·
-        💬 <a href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">Message on Messenger</a>
-      </p>
-    </div>
+    <p style="margin:0">
+      📞 <a href="tel:+639462911866">+63 946 291 1866</a> ·
+      ✉️ <a href="mailto:chinveloso.consmaterial@gmail.com">chinveloso.consmaterial@gmail.com</a> ·
+      💬 <a href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">Message on Messenger</a>
+    </p>
   </div>
 </footer>
 
