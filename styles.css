@@ -84,6 +84,21 @@ a:hover{ text-decoration:underline; }
   color: var(--sea);
 }
 .btn-ghost:hover{ text-decoration:none; }
+@media (max-width: 900px){
+  .nav-menu.open{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    right: 4%;
+    top: 60px;
+    background: var(--card);
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    min-width: 220px;
+  }
+}
 
 /* ---------- HEADER / NAV ---------- */
 .site-header{
