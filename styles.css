@@ -60,46 +60,39 @@ a:hover{ text-decoration:underline; }
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
-  padding: 13px 18px;
+  gap:8px;
+  padding: 12px 16px;
   border-radius: 999px;
-  font-weight: 600;
-  border: 1px solid rgba(14,107,95,.25);
-  box-shadow: 0 8px 18px rgba(16,24,39,.10);
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-.btn:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 12px 24px rgba(16,24,39,.18);
+  font-weight: 700;
+  font-size: 14px;
+  border: 0;
+  cursor: pointer;
   text-decoration:none;
+  transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
 }
+.btn:active{ transform: translateY(1px); }
 
 .btn-primary{
   background: linear-gradient(135deg, var(--bamboo), var(--sea));
   color: #fff;
-  border-color: rgba(255,255,255,.18);
+  box-shadow: 0 14px 30px rgba(11,74,67,.25);
 }
+.btn-primary:hover{ text-decoration:none; }
 
 .btn-ghost{
-  background: rgba(255,255,255,.55);
-  color: var(--earth);
+  background: rgba(14,107,95,.08);
+  color: var(--sea);
 }
-body.dark .btn-ghost{
-  background: rgba(255,255,255,.08);
-}
+.btn-ghost:hover{ text-decoration:none; }
 
-/* ---------- HEADER ---------- */
+/* ---------- HEADER / NAV ---------- */
 .site-header{
   position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(251,247,240,.72);
+  top:0;
+  z-index: 90;
+  background: rgba(251,247,240,.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(16,24,39,.08);
-}
-body.dark .site-header{
-  background: rgba(11,18,32,.72);
-  border-bottom: 1px solid rgba(255,255,255,.10);
 }
 
 .nav-inner{
@@ -117,10 +110,17 @@ body.dark .site-header{
   gap:10px;
   font-weight:700;
 }
+
+.brand-text{
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+/* ✅ SMALL LOGO (GLOBAL) */
 .logo{
-  width:40px;
-  height:40px;
-  border-radius: 14px;
+  width:32px;
+  height:32px;
+  border-radius: 10px;
   object-fit: cover;
 }
 
@@ -148,59 +148,50 @@ body.dark .site-header{
 }
 .nav-link:hover{ background: rgba(14,107,95,.08); }
 
-@media (max-width: 860px){
-  .nav-toggle{ display:block; }
-  .nav-menu{
-    position:absolute;
-    top:62px;
-    right:4%;
-    width:240px;
-    flex-direction:column;
-    background: var(--card);
-    padding:12px;
-    border-radius:16px;
-    box-shadow: var(--shadow);
-    display:none;
-  }
-  .nav-menu.open{ display:flex; }
+@media (max-width: 900px){
+  .nav-toggle{ display:inline-flex; }
+  .nav-menu{ display:none; }
 }
 
-/* ---------- HERO (CONVERSION OPTIMIZED) ---------- */
+/* ---------- HERO ---------- */
 .hero{
-  position:relative;
-  min-height: 65vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  position: relative;
+  min-height: 72vh;
+  display:grid;
+  place-items:center;
   overflow:hidden;
 }
 
 .hero-bg{
   position:absolute;
   inset:0;
-  background: url("assets/images/banner.jpg") center/cover no-repeat;
-  transform: scale(1.05);
+  background: url("assets/images/sunrise.jpg") center/cover no-repeat;
+  filter: saturate(1.05) contrast(1.02);
+  transform: scale(1.03);
 }
 
 .hero-overlay{
   position:relative;
-  width:min(960px, 92%);
-  padding: 48px 22px;
-  border-radius: 26px;
+  width:min(920px, 92%);
+  margin:0 auto;
   text-align:center;
   color:#fff;
-  background: linear-gradient(
-    180deg,
-    rgba(16,24,39,.70),
-    rgba(14,107,95,.30)
-  );
-  box-shadow: 0 22px 60px rgba(0,0,0,.35);
+  padding: 64px 0;
+}
+
+.hero-overlay::before{
+  content:"";
+  position:absolute;
+  inset:-18px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,.35), rgba(0,0,0,.15));
+  border-radius: 28px;
+  z-index:-1;
 }
 
 .hero-title{
   font-family: "Merriweather", serif;
   font-size: clamp(30px, 4vw, 46px);
-  margin-bottom:10px;
+  margin: 0 0 10px;
 }
 .hero-sub{
   max-width: 60ch;
@@ -221,7 +212,7 @@ body.dark .site-header{
 .content-section h2{
   font-family: "Merriweather", serif;
   font-size: 28px;
-  margin-bottom: 14px;
+  margin: 0 0 14px;
 }
 
 .section-tint{
@@ -246,13 +237,22 @@ body.dark .site-header{
 }
 
 .card img{
+  width:100%;
   height:180px;
   object-fit:cover;
   border-radius:14px;
 }
 
 .card h3{ margin:12px 0 6px; }
-.card p{ color: var(--muted); }
+.card p{ color: var(--muted); margin:0; }
+
+.center-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top: 16px;
+}
 
 /* ---------- EXCLUSIVE DEAL ---------- */
 .highlight-section{
@@ -282,7 +282,7 @@ body.dark .site-header{
 }
 .deal-list li{ padding:6px 0; }
 
-/* ---------- GALLERY ---------- */
+/* ---------- GALLERY (legacy grid kept for safety) ---------- */
 .gallery-grid{
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -292,6 +292,89 @@ body.dark .site-header{
   aspect-ratio: 4 / 3;
   object-fit:cover;
   border-radius:14px;
+}
+
+/* ✅ GALLERY CAROUSEL (your new requirement) */
+.carousel{
+  margin-top:14px;
+  overflow:hidden;
+  border-radius: var(--radius);
+}
+
+.carousel-track{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding: 6px 2px 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-track::-webkit-scrollbar{
+  height: 8px;
+}
+.carousel-track::-webkit-scrollbar-thumb{
+  background: rgba(16,24,39,.18);
+  border-radius: 999px;
+}
+
+.carousel-track img{
+  width: min(520px, 86vw);
+  height: 320px;
+  object-fit: cover;
+  border-radius: 14px;
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px){
+  .carousel-track img{ height: 260px; }
+}
+
+/* ---------- ACCOMMODATIONS (4 CARDS) ---------- */
+.accom-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap:14px;
+  margin-top:14px;
+}
+
+.accom-card{
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+.accom-card img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  display:block;
+}
+
+.accom-body{
+  padding:14px 16px 16px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  flex:1;
+}
+
+.accom-body h3{ margin:0; }
+.accom-body p{ margin:0; color: var(--muted); }
+.accom-body .btn{ margin-top:auto; }
+
+/* Responsive: 4 → 2 → 1 */
+@media (max-width: 1024px){
+  .accom-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .accom-grid{ grid-template-columns: 1fr; }
+  .accom-card img{ height:180px; }
 }
 
 /* ---------- FAQ ---------- */
@@ -338,18 +421,12 @@ summary{
   box-shadow: 0 20px 46px rgba(0,0,0,.25);
   z-index:80;
 }
+
 /* ===== Overrides (Jan 2026) ===== */
 
-/* HERO uses sunrise as background */
+/* HERO uses sunrise as background (keep) */
 .hero-bg{
   background: url("assets/images/sunrise.jpg") center/cover no-repeat !important;
-}
-
-/* Gallery – keep tiles consistent */
-.gallery-grid img{
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 14px;
 }
 
 /* Location split layout */
@@ -361,9 +438,7 @@ summary{
 }
 
 @media (max-width: 900px){
-  .location-grid{
-    grid-template-columns: 1fr;
-  }
+  .location-grid{ grid-template-columns: 1fr; }
 }
 
 /* Smaller map frame */
@@ -374,23 +449,20 @@ summary{
   border-radius: 16px;
 }
 @media (max-width: 900px){
-  .map-frame{
-    height: 300px;
-  }
+  .map-frame{ height: 300px; }
 }
 
 /* Messenger-first contact */
-.contact-card{
-  text-align: center;
-}
+.contact-card{ text-align: center; }
 .contact-card .btn{
   width: 100%;
   max-width: 420px;
 }
+
 /* ===== Compact Payment Form ===== */
 .form-card{
-  max-width: 520px;          /* controls size */
-  margin: 0 auto;            /* centers it */
+  max-width: 520px;
+  margin: 0 auto;
   padding: 18px 20px;
 }
 
@@ -398,25 +470,4 @@ summary{
 .form-card label{
   font-size: 14px;
   font-weight: 500;
-}
-
-.form-card input,
-.form-card select{
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,.15);
-  font-size: 14px;
-  margin-top: 4px;
-}
-
-/* Reduce vertical gaps */
-.form-card label + label{
-  margin-top: 10px;
-}
-
-/* Submit button not too tall */
-.form-card button{
-  padding: 12px 16px;
-  font-size: 15px;
 }
