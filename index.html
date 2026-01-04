@@ -7,7 +7,9 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- ✅ Your repo has styles.css in ROOT -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -28,6 +30,7 @@
         <li><a class="nav-link" href="#packages">Packages</a></li>
         <li><a class="nav-link" href="#gallery">Gallery</a></li>
         <li><a class="nav-link" href="pages/booking.html">Booking</a></li>
+        <li><a class="nav-link" href="pages/payment.html">Payments</a></li>
         <li><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
 
@@ -85,9 +88,9 @@
       </article>
     </div>
 
-    <div style="text-align:center;margin-top:18px">
+    <div class="center-actions">
       <a class="btn btn-primary" href="pages/booking.html">Book Now</a>
-      <a class="btn btn-ghost" href="pages/payment.html#qrs" style="margin-left:8px">View Payment QR Codes</a>
+      <a class="btn btn-ghost" href="pages/payment.html#qrs">View Payment QR Codes</a>
     </div>
   </div>
 </section>
@@ -112,16 +115,19 @@
 
     <ul class="contact-list">
       <li><strong>Phone:</strong> <a href="tel:+639462911866">+63 946 291 1866</a></li>
-      <li><strong>Email:</strong> <a href="mailto:chinveloso.consmaterial@gmail.com">chinveloso.consmaterial@gmail.com</a></li>
+      <li><strong>Email:</strong> <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a></li>
       <li><strong>Messenger:</strong> <a href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">m.me/lvbeachcamp</a></li>
     </ul>
 
-    <div style="text-align:center;margin-top:12px">
-      <a class="btn btn-primary" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">Message on Messenger</a>
+    <div class="center-actions">
+      <a class="btn btn-primary" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">
+        Message on Messenger
+      </a>
     </div>
   </div>
 </section>
 
+<!-- 🌴 LV BEACH CAMP FOOTER (guest-facing only) -->
 <footer class="site-footer">
   <div class="container footer-inner">
     <p style="margin:0">© <span id="year"></span> LV Beach Camp</p>
@@ -131,18 +137,33 @@
   </div>
 </footer>
 
+<!-- 🛠️ AGENCY MICRO-FOOTER (separate + subtle, your compensation links) -->
 <footer class="agency-footer">
   <div class="container">
     <p>
-      Built by
-      <a href="https://www.facebook.com/svpfunnels" target="_blank" rel="noopener"><strong>SVP Funnels &amp; Digital Builder</strong></a>
+      <strong>Powered by</strong>
+      <a href="https://www.facebook.com/svpfunnels" target="_blank" rel="noopener">SVP Funnels</a>
       ×
-      <a href="https://www.facebook.com/profile.php?id=61585335397502" target="_blank" rel="noopener"><strong>TinyTeam Digital Studio</strong></a><br>
-      Want a system like this? Email: <a href="mailto:smallsteps@tinyteamstudio.online">smallsteps@tinyteamstudio.online</a>
+      <a href="https://www.facebook.com/profile.php?id=61585335397502" target="_blank" rel="noopener">TinyTeam Digital Studio</a><br>
+      <span class="mini-ad">Booking systems &amp; websites for small businesses</span><br>
+      <span class="mini-ad">
+        📧 <a href="mailto:chinveloso.consmaterials@gmail.com">chinveloso.consmaterials@gmail.com</a>
+        ·
+        📧 <a href="mailto:smallsteps@tinyteam.online">smallsteps@tinyteam.online</a>
+      </span>
     </p>
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<!-- Floating Messenger -->
+<a class="messenger" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener" aria-label="Chat on Messenger">
+  <span class="tooltip">💬 Chat with us</span>
+  <svg class="messenger-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path fill="currentColor" d="M12 2C6.48 2 2 6.1 2 11.16c0 2.88 1.46 5.43 3.74 7.1V22l3.57-1.97c.86.24 1.77.37 2.69.37 5.52 0 10-4.1 10-9.24S17.52 2 12 2zm.99 12.44-2.55-2.73-4.98 2.73 5.45-5.79 2.55 2.73 4.98-2.73-5.45 5.79z"/>
+  </svg>
+</a>
+
+<!-- ✅ Your repo has main.js in ROOT -->
+<script src="main.js"></script>
 </body>
 </html>
