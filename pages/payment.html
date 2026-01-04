@@ -5,22 +5,23 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Payments — LV Beach Camp</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="icon" href="../assets/images/logo.jpg" type="image/jpeg">
   <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
 <header class="site-header">
   <div class="nav-inner">
-    <a class="brand" href="../index.html" aria-label="LV Beach Camp home">
+    <a class="brand" href="../index.html">
       <img src="../assets/images/logo.jpg" class="logo" alt="LV Beach Camp logo">
       <span class="brand-text">LV Beach Camp</span>
     </a>
 
-    <nav class="main-nav" aria-label="Main navigation">
-      <ul class="nav-menu" style="display:flex;gap:14px;list-style:none;margin:0;padding:0">
+    <nav class="main-nav">
+      <ul class="nav-menu">
         <li><a class="nav-link" href="../index.html">Home</a></li>
         <li><a class="nav-link" href="booking.html">Booking</a></li>
         <li><a class="nav-link" href="#qrs">Payments</a></li>
@@ -30,146 +31,130 @@
   </div>
 </header>
 
-<section class="hero" aria-label="Payments hero">
-  <div class="hero-bg" aria-hidden="true"></div>
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero" style="min-height:50vh">
+  <div class="hero-bg"></div>
   <div class="hero-overlay">
-    <h1 class="hero-title">Payments &amp; Upload Proof</h1>
-    <p class="hero-sub">Choose a payment method below, then upload your payment proof so we can confirm your booking.</p>
+    <h1 class="hero-title">Payments & Confirmation</h1>
+    <p class="hero-sub">
+      Choose a payment method below, then upload your payment proof so we can confirm your booking.
+    </p>
     <div class="hero-cta">
-      <a href="booking.html" class="btn btn-primary">Back to Booking</a>
-      <a href="#upload" class="btn btn-ghost">Upload Proof</a>
+      <a class="btn btn-primary" href="#qrs">View Payment Options</a>
+      <a class="btn btn-ghost" href="booking.html">Back to Booking</a>
     </div>
   </div>
 </section>
 
-<main class="container narrow" role="main" style="padding-top:18px;padding-bottom:30px">
+<!-- ================= PAYMENT METHODS ================= -->
+<section id="qrs" class="content-section">
+  <div class="container">
+    <h2>Payment Options</h2>
+    <p class="muted">
+      Scan one of the QR codes below to pay your deposit or full amount.
+      After payment, please upload your proof for confirmation.
+    </p>
 
-  <section id="qrs" class="card" style="padding:18px">
-    <h2 style="margin-top:0;font-family:'Merriweather',serif">Payment QR Codes</h2>
-    <p class="muted">Scan a QR code to pay your deposit. After payment, upload proof below.</p>
-
-    <div class="payment-cards" style="margin-top:12px">
-      <div class="payment-card">
+    <div class="payment-grid" style="margin-top:14px">
+      <div class="card payment-card">
         <img src="../assets/images/qr-gcash.png" alt="GCash QR">
-        <p style="margin-top:8px"><strong>GCash</strong></p>
+        <strong>GCash</strong>
       </div>
 
-      <div class="payment-card">
+      <div class="card payment-card">
         <img src="../assets/images/qr-paymaya.png" alt="PayMaya QR">
-        <p style="margin-top:8px"><strong>PayMaya</strong></p>
+        <strong>PayMaya</strong>
       </div>
 
-      <div class="payment-card">
+      <div class="card payment-card">
         <img src="../assets/images/qr-bdo.png" alt="BDO QR">
-        <p style="margin-top:8px"><strong>BDO</strong></p>
+        <strong>BDO</strong>
       </div>
 
-      <div class="payment-card">
+      <div class="card payment-card">
         <img src="../assets/images/qr-pnb.png" alt="PNB QR">
-        <p style="margin-top:8px"><strong>PNB</strong></p>
+        <strong>PNB</strong>
       </div>
     </div>
 
-    <div class="center-actions" style="margin-top:14px">
+    <div class="center-actions" style="margin-top:18px">
       <a class="btn btn-primary" href="#upload">Upload Payment Proof</a>
-      <a class="btn btn-ghost" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">Message Support</a>
+      <a class="btn btn-ghost" href="https://m.me/lvbeachcamp" target="_blank">
+        Message Us Instead
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="upload" class="card" style="padding:18px;margin-top:14px">
-    <h2 style="margin-top:0;font-family:'Merriweather',serif">Upload Payment Proof</h2>
-    <p class="muted">If submission fails, just message us on Messenger with your name + screenshot.</p>
+<!-- ================= UPLOAD PROOF ================= -->
+<section id="upload" class="content-section section-tint">
+  <div class="container narrow">
+    <h2>Upload Payment Proof</h2>
+    <p class="muted">
+      If uploading fails, you may simply message us on Messenger with your name and screenshot.
+    </p>
 
-    <!-- NOTE: keep your existing Apps Script URL here -->
-    <form id="paymentForm"
-      action="PASTE_YOUR_APPS_SCRIPT_WEBAPP_URL_HERE"
-      method="POST"
-      enctype="multipart/form-data">
+    <div class="card" style="padding:18px;margin-top:14px">
+      <form id="paymentForm"
+        action="PASTE_YOUR_APPS_SCRIPT_WEBAPP_URL_HERE"
+        method="POST"
+        enctype="multipart/form-data">
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <div>
-          <label>Full Name</label>
-          <input name="name" type="text" required>
+        <div style="display:grid;gap:12px">
+          <label>
+            Full Name
+            <input type="text" name="name" required>
+          </label>
+
+          <label>
+            Booking Reference / Package
+            <input type="text" name="package" required>
+          </label>
+
+          <label>
+            Amount Paid
+            <input type="text" name="amount" required>
+          </label>
+
+          <label>
+            Upload Screenshot
+            <input type="file" name="proof" accept="image/*" required>
+          </label>
         </div>
-        <div>
-          <label>Contact Number</label>
-          <input name="contact" type="text" required>
+
+        <div class="center-actions" style="margin-top:14px">
+          <button type="submit" class="btn btn-primary">
+            Submit Payment Proof
+          </button>
         </div>
-      </div>
+      </form>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
-        <div>
-          <label>Package</label>
-          <select name="package" required>
-            <option value="">Select…</option>
-            <option>Bahay Kubo Stay</option>
-            <option>Camping / Tent Stay</option>
-            <option>Gazebo / Cottage Space</option>
-          </select>
-        </div>
-        <div>
-          <label>Amount Paid</label>
-          <input name="amount" type="text" placeholder="e.g. 500" required>
-        </div>
+      <div id="thank" style="display:none;margin-top:14px">
+        <strong>✅ Submitted successfully!</strong>
+        <p class="muted">We’ll review and confirm your booking shortly.</p>
       </div>
-
-      <div style="margin-top:12px">
-        <label>Upload Screenshot / Proof</label>
-        <input name="proof" type="file" accept="image/*" required>
-      </div>
-
-      <div class="center-actions" style="margin-top:14px">
-        <button class="submit" type="submit">Submit Payment Proof</button>
-      </div>
-    </form>
-
-    <div id="thank" class="card" style="display:none;margin-top:12px;padding:14px">
-      <strong>✅ Submitted!</strong>
-      <p class="muted" style="margin:6px 0 0">We’ll verify and message you shortly. Thank you!</p>
     </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
+<!-- ================= FOOTERS ================= -->
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div style="display:flex;align-items:center;gap:10px">
-      <img src="../assets/images/logo.jpg" alt="LV Beach Camp logo" class="footer-logo" />
-      <p style="margin:0">© <span id="year"></span> LV Beach Camp</p>
-    </div>
-
-    <p style="margin:0">
-      📞 <a href="tel:+639462911866">+63 946 291 1866</a> ·
-      ✉️ <a href="mailto:lvbeachcamp@gmail.com">lvbeachcamp@gmail.com</a> ·
-      💬 <a href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">Message on Messenger</a>
-    </p>
-  </div>
+  <p>© <span id="year"></span> LV Beach Camp</p>
 </footer>
 
 <footer class="agency-footer">
-  <div class="container">
-    <p>
-      Powered by
-      <a href="https://www.facebook.com/svpfunnels" target="_blank" rel="noopener"><strong>SVP Funnels &amp; Digital Builder</strong></a>
-      ×
-      <a href="https://www.facebook.com/profile.php?id=61585335397502" target="_blank" rel="noopener"><strong>TinyTeam Digital Studio</strong></a>
-      <br/>
-      <span class="mini-ad">Want a booking system + payment flow like this for your business? Let’s build it — we’re a 2-man agency.</span>
-      <br/>
-      <span class="mini-ad">
-        SVP: <a href="mailto:chinveloso.consmaterials@gmail.com">chinveloso.consmaterials@gmail.com</a> ·
-        TinyTeam: <a href="mailto:smallsteps@tinyteam.online">smallsteps@tinyteam.online</a>
-      </span>
-    </p>
-  </div>
+  <p>
+    Powered by
+    <a href="https://www.facebook.com/svpfunnels" target="_blank">SVP Funnels</a> ×
+    <a href="https://www.facebook.com/profile.php?id=61585335397502" target="_blank">TinyTeam Digital Studio</a>
+  </p>
 </footer>
 
-<a class="messenger" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener" aria-label="Message us on Messenger">
-  <span class="tooltip">Message us on Messenger!</span>
-  <svg viewBox="0 0 24 24" class="messenger-icon" aria-hidden="true">
-    <path d="M12 2C6.48 2 2 5.92 2 10.5c0 2.86 1.72 5.41 4.43 7.02L6 22l4.01-2.13c.8.22 1.64.35 2.49.35 5.52 0 10-3.92 10-8.5S17.52 2 12 2zM11 14l-3.5-4 4.5 1.5L16 8l-5 6z" fill="currentColor"/>
-  </svg>
-</a>
+<a class="messenger" href="https://m.me/lvbeachcamp" target="_blank">💬</a>
 
 <script src="../main.js"></script>
 </body>
