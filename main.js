@@ -1,9 +1,10 @@
-// v2/assets/js/main.js
+// main.js — LV Beach Camp interactions
 (function () {
+  // Year
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Mobile nav (if present)
+  // Mobile nav
   const navToggle = document.getElementById("nav-toggle");
   const navMenu = document.getElementById("nav-menu");
   if (navToggle && navMenu) {
