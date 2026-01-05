@@ -15,7 +15,7 @@
 <!-- ================= HEADER ================= -->
 <header class="site-header">
   <div class="nav-inner">
-    <a class="brand" href="../index.html">
+    <a class="brand" href="../index.html" aria-label="LV Beach Camp home">
       <img src="../assets/images/logo.jpg" class="logo" alt="LV Beach Camp logo">
       <span class="brand-text">LV Beach Camp</span>
     </a>
@@ -57,7 +57,8 @@
       After payment, please upload your proof for confirmation.
     </p>
 
-    <div class="payment-grid" style="margin-top:14px">
+    <!-- ✅ Single-row payment cards (as agreed) -->
+    <div class="payment-grid" style="margin-top:14px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
       <div class="card payment-card">
         <img src="../assets/images/qr-gcash.png" alt="GCash QR">
         <strong>GCash</strong>
@@ -81,8 +82,8 @@
 
     <div class="center-actions" style="margin-top:18px">
       <a class="btn btn-primary" href="#upload">Upload Payment Proof</a>
-      <a class="btn btn-ghost" href="https://m.me/lvbeachcamp" target="_blank">
-        Message Us Instead
+      <a class="btn btn-ghost" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">
+        Message on Messenger
       </a>
     </div>
   </div>
@@ -93,10 +94,11 @@
   <div class="container narrow">
     <h2>Upload Payment Proof</h2>
     <p class="muted">
-      If uploading fails, you may simply message us on Messenger with your name and screenshot.
+      If uploading fails, simply message us on Messenger with your name and screenshot.
     </p>
 
-    <div class="card" style="padding:18px;margin-top:14px">
+    <!-- ✅ SMALL, CENTERED FORM -->
+    <div class="card form-card">
       <form id="paymentForm"
         action="PASTE_YOUR_APPS_SCRIPT_WEBAPP_URL_HERE"
         method="POST"
@@ -149,12 +151,12 @@
 <footer class="agency-footer">
   <p>
     Powered by
-    <a href="https://www.facebook.com/svpfunnels" target="_blank">SVP Funnels</a> ×
-    <a href="https://www.facebook.com/profile.php?id=61585335397502" target="_blank">TinyTeam Digital Studio</a>
+    <a href="https://www.facebook.com/svpfunnels" target="_blank" rel="noopener">SVP Funnels</a> ×
+    <a href="https://www.facebook.com/profile.php?id=61585335397502" target="_blank" rel="noopener">TinyTeam Digital Studio</a>
   </p>
 </footer>
 
-<a class="messenger" href="https://m.me/lvbeachcamp" target="_blank">💬</a>
+<a class="messenger" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">💬</a>
 
 <script src="../main.js"></script>
 </body>
