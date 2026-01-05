@@ -560,3 +560,20 @@ form{
   width: 100%;
   border: 0;
 }
+/* ===== About Section Highlight Box ===== */
+.about-box{
+  background: rgba(255,255,255,0.75);
+  border: 1.5px solid rgba(14,107,95,0.25);
+  border-radius: 20px;
+  padding: 24px 22px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  backdrop-filter: blur(4px);
+}
+
+.about-box h2{
+  margin-top: 0;
+}
+
+.about-box p + p{
+  margin-top: 10px;
+}
