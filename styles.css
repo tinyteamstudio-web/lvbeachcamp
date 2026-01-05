@@ -577,3 +577,50 @@ form{
 .about-box p + p{
   margin-top: 10px;
 }
+/* ===== Gallery Carousel (scrollable + touch + snap) ===== */
+.carousel{
+  position: relative;
+  overflow: hidden; /* keeps outer clean */
+}
+
+.carousel-track{
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 4px 14px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox hide */
+}
+
+.carousel-track::-webkit-scrollbar{
+  display: none; /* Chrome/Safari hide */
+}
+
+.carousel-track > *{
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* items */
+.carousel-item{
+  width: min(520px, 86vw);
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+  background: #fff;
+  user-select: none;
+}
+
+/* Optional: cursor hint for desktop drag feel */
+@media (hover:hover){
+  .carousel-track{
+    cursor: grab;
+  }
+  .carousel-track:active{
+    cursor: grabbing;
+  }
+}
+
