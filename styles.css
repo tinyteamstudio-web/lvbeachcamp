@@ -638,4 +638,73 @@ form{
     cursor: grabbing;
   }
 }
+/* ===== Rates Layout ===== */
+.rates-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+
+/* Shared card style */
+.rates-card,
+.exclusive-card{
+  background:#fff;
+  border-radius:20px;
+  padding:18px;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+}
+
+/* Pricelist */
+.rates-card h3{
+  margin-top:0;
+}
+
+.rates-img{
+  width:100%;
+  height:auto;
+  border-radius:14px;
+  display:block;
+}
+
+/* Exclusive highlight */
+.exclusive-card{
+  position:relative;
+  border:2px solid #ffb703;
+}
+
+.badge{
+  position:absolute;
+  top:-12px;
+  left:18px;
+  background:#ffb703;
+  color:#000;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.exclusive-list{
+  list-style:none;
+  padding:0;
+  margin:14px 0;
+}
+
+.exclusive-list li{
+  margin-bottom:8px;
+}
+
+.exclusive-note{
+  font-size:14px;
+  color:#666;
+  margin-bottom:16px;
+}
+
+/* Mobile stack */
+@media (max-width: 768px){
+  .rates-grid{
+    grid-template-columns:1fr;
+  }
+}
 
