@@ -486,3 +486,59 @@ summary{
   font-size: 14px;
   font-weight: 500;
 }
+/* =================================================
+   GLOBAL LOGO SIZE — FINAL OVERRIDE (ALL PAGES)
+   ================================================= */
+
+/* Catch ALL possible logo placements */
+img.logo,
+.logo img,
+header img,
+.site-header img,
+.brand img,
+.brand-logo,
+.header-logo{
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  object-fit: cover !important;
+}
+
+/* Prevent any container from stretching logos */
+header,
+.site-header,
+.brand{
+  align-items: center !important;
+}
+
+/* Safety: never allow logo to scale on mobile */
+@media (max-width: 768px){
+  img.logo,
+  .brand img,
+  header img{
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+/* ===== GLOBAL: REMOVE CONTACT NUMBERS (ALL PAGES) ===== */
+a[href^="tel:"]{ display:none !important; }
+
+/* If any phone blocks were wrapped in common classes/ids */
+.phone, .phone-number, .contact-number, #phone, #contact-number{
+  display:none !important;
+}
+/* ===== GLOBAL: MAKE PAYMENT/BOOKING FORMS SMALL + CENTERED ===== */
+form{
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.form-card,
+.payment-card,
+.booking-card{
+  max-width: 520px !important;
+  margin: 0 auto !important;
+}
