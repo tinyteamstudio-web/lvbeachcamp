@@ -27,7 +27,7 @@
       <ul id="nav-menu" class="nav-menu">
         <li><a class="nav-link" href="#about">About</a></li>
         <li><a class="nav-link" href="#packages">Packages</a></li>
-        <li><a class="nav-link" href="#exclusive-deal">Exclusive</a></li>
+        <li><a class="nav-link" href="#rates">Rates</a></li>
         <li><a class="nav-link" href="#gallery">Gallery</a></li>
         <li><a class="nav-link" href="#location">Location</a></li>
         <li><a class="nav-link" href="#faq">FAQ</a></li>
@@ -48,9 +48,7 @@
     <p class="hero-sub">
       A peaceful beachfront camp where nature, calm nights, and island mornings meet.
     </p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="pages/booking.html">Book Your Stay</a>
-    </div>
+    <!-- ✅ removed hero button -->
   </div>
 </section>
 
@@ -74,7 +72,7 @@
   </div>
 </section>
 
-<!-- ================= ACCOMMODATIONS (NEW 4 CARDS) ================= -->
+<!-- ================= ACCOMMODATIONS (4 CARDS) ================= -->
 <section id="accommodations" class="content-section">
   <div class="container">
     <h2>Accommodations</h2>
@@ -86,7 +84,7 @@
         <div class="accom-body">
           <h3>Bahay Kubo</h3>
           <p class="muted">Cozy native-style stay near the sea.</p>
-          <a class="btn btn-primary" href="#packages">View Rates</a>
+          <a class="btn btn-ghost" href="#rates">View Rates</a>
         </div>
       </article>
 
@@ -95,7 +93,7 @@
         <div class="accom-body">
           <h3>Teepee House</h3>
           <p class="muted">Fun camping feel — comfy and photo-worthy.</p>
-          <a class="btn btn-primary" href="#packages">View Rates</a>
+          <a class="btn btn-ghost" href="#rates">View Rates</a>
         </div>
       </article>
 
@@ -104,7 +102,7 @@
         <div class="accom-body">
           <h3>Room A</h3>
           <p class="muted">Simple room stay for restful overnights.</p>
-          <a class="btn btn-primary" href="#packages">View Rates</a>
+          <a class="btn btn-ghost" href="#rates">View Rates</a>
         </div>
       </article>
 
@@ -113,12 +111,12 @@
         <div class="accom-body">
           <h3>Medium Camping Tent</h3>
           <p class="muted">Classic camping by the sea, easy and breezy.</p>
-         <a class="btn btn-ghost" href="#rates">View Rates</a>
+          <a class="btn btn-ghost" href="#rates">View Rates</a>
         </div>
       </article>
     </div>
 
-    <!-- ✅ MOVED HERE: Book Now + Ask for Rates (under accommodations) -->
+    <!-- ✅ Buttons under accommodations -->
     <div class="center-actions" style="margin-top:16px">
       <a class="btn btn-primary" href="pages/booking.html">Book Now</a>
       <a class="btn btn-ghost" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">Ask for Rates</a>
@@ -127,14 +125,16 @@
   </div>
 </section>
 
-<!-- ================= PACKAGES ================= -->
+<!-- ================= PACKAGES (HEADER ONLY) ================= -->
 <section id="packages" class="content-section section-tint">
   <div class="container">
     <h2>Packages</h2>
-    <!-- ✅ Removed package photos/cards to avoid redundancy -->
+    <!-- ✅ Removed redundant package photos/cards -->
   </div>
 </section>
-<section id="rates" class="section">
+
+<!-- ================= RATES (PRICELIST LEFT + EXCLUSIVE RIGHT) ================= -->
+<section id="rates" class="content-section">
   <div class="container">
     <div class="section-head">
       <h2>Rates & Packages</h2>
@@ -142,7 +142,7 @@
     </div>
 
     <div class="rates-grid">
-      
+
       <!-- LEFT: PRICE LIST -->
       <div class="rates-card">
         <h3>Price List</h3>
@@ -170,7 +170,7 @@
           Availability depends on date and group size. Message us to confirm.
         </p>
 
-        <a href="https://m.me/lvbeachcamp" target="_blank" class="btn btn-primary">
+        <a href="https://m.me/lvbeachcamp" target="_blank" rel="noopener" class="btn btn-primary">
           Ask About Exclusive Package
         </a>
       </div>
@@ -179,44 +179,10 @@
   </div>
 </section>
 
-<!-- ================= EXCLUSIVE DEAL ================= -->
-<section id="exclusive-deal" class="content-section highlight-section">
-  <div class="container narrow">
-    <div class="card deal-card">
-      <span class="deal-badge">Limited Offer</span>
-      <h2>₱7,000 Exclusive Island Deal</h2>
-      <p class="muted">
-        A special bundled experience for small groups seeking a peaceful,
-        all-in beach escape.
-      </p>
-
-      <ul class="deal-list">
-        <li>✔ Private stay access (subject to availability)</li>
-        <li>✔ Use of gazebo / cottage space</li>
-        <li>✔ Free use of dirty kitchen</li>
-        <li>✔ Ideal for overnight or extended day use</li>
-        <li>✔ Perfect for couples, families, or barkadas</li>
-      </ul>
-
-      <p class="muted">
-        Inclusions may vary depending on date and group size.
-        Message us to confirm availability.
-      </p>
-
-      <div class="center-actions">
-        <a class="btn btn-primary" href="https://m.me/lvbeachcamp" target="_blank" rel="noopener">
-          Claim ₱7,000 Deal
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= GALLERY (FIXED + CAROUSEL) ================= -->
+<!-- ================= GALLERY (CAROUSEL) ================= -->
 <section id="gallery" class="content-section">
   <div class="container">
     <h2>Gallery</h2>
-    <!-- ✅ Removed “(Logo image is excluded.)” -->
     <p class="muted">Swipe to explore the camp vibe.</p>
 
     <div class="carousel" aria-label="LV Beach Camp gallery carousel">
@@ -238,7 +204,6 @@
     <h2>About the Camp & Location</h2>
 
     <div class="location-grid">
-      <!-- LEFT: About + Details -->
       <div class="card" style="padding:18px">
         <h3 style="margin-top:0;font-family:'Merriweather',serif">A peaceful island escape</h3>
         <p class="muted">
@@ -264,7 +229,6 @@
         </div>
       </div>
 
-      <!-- RIGHT: Map (smaller) -->
       <div class="card" style="padding:14px">
         <iframe
           class="map-frame"
