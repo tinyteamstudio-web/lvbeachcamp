@@ -767,3 +767,10 @@ form{
   max-width: 100%;
   text-align: center;
 }
+/* Force center alignment for Exclusive Package buttons */
+.exclusive-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* ✅ THIS is the key */
+  gap: 12px;
+}
