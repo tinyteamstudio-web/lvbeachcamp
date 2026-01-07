@@ -755,3 +755,17 @@ form{
   margin-top:12px;
   flex-wrap:wrap;
 }
+/* Exclusive package action buttons – stacked & centered */
+.mini-actions{
+  display:flex;
+  flex-direction:column;   /* 👈 makes 3 rows */
+  align-items:center;      /* 👈 centers buttons */
+  gap:10px;
+  margin-top:14px;
+}
+
+.mini-actions .btn{
+  width:100%;
+  max-width:220px;         /* 👈 keeps buttons neat */
+  text-align:center;
+}
