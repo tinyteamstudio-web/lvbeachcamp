@@ -763,6 +763,20 @@ form{
   gap:10px;
   margin-top:14px;
 }
+/* FORCE: Exclusive Quick Notes buttons = 3 rows, centered */
+.exclusive-actions{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-top: 14px;
+}
+
+.exclusive-actions .btn{
+  width: 100%;
+  max-width: 260px;
+  text-align: center;
+}
 
 .mini-actions .btn{
   width:100%;
