@@ -783,3 +783,9 @@ form{
   max-width:220px;         /* 👈 keeps buttons neat */
   text-align:center;
 }
+/* Fix Exclusive Package buttons alignment */
+.exclusive-actions .btn{
+  width: 260px;          /* same width for all */
+  max-width: 100%;
+  text-align: center;
+}
